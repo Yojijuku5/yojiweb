@@ -34,7 +34,7 @@ export default function Home() {
           </p>
           <p className="pb-4">
             As I think about wrapping up this post, I realise that I won't be able to timestamp the post (time currently 01:59AM), since I don't have such functionality implemented yet. Oh well, I'm sure I'll 
-            get around to that soon, right? For now, this is the birth of Yojinet (temp name?) :)
+            get around to that soon, right? For now, this is the birth of Yojiweb (temp name?) :)
           </p>
         </div>
       </div>
