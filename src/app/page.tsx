@@ -21,30 +21,30 @@ const Home = () => {
         </div>
         <div className="mx-4">
           <p className="pb-4">
-            Finally got around to deploying the website I&aposve been thinking about making for the longest time. It says a few things about me that I would rather work on this instead of my University dissertation, 
+            Finally got around to deploying the website I&apos;ve been thinking about making for the longest time. It says a few things about me that I would rather work on this instead of my University dissertation, 
             despite my dissertation being about something I genuinly find interesting and linked to the industry that I want to eventually go into.
           </p>
           <p className="pb-4">
             For now, the website is very bare bones, consisting of... just this page and text. This post is even written directly into the source code haha, but hopefully I will 
             feel motivated enough to evolve this page into something more whole. High up on the to-do list is to perhaps find a way to be able to post without directly entering the source code. 
-            Some more UI aesthetic as well (colours etc. currently being temporary), and then maybe a comment section, even if noone visits because I don&apost plan on telling the world about this site just yet. 
+            Some more UI aesthetic as well (colours etc. currently being temporary), and then maybe a comment section, even if noone visits because I don&apos;t plan on telling the world about this site just yet. 
             A database would probably do wonders on both the storage and the efficiency of the website too.
           </p>
           <p className="pb-4">
-            I&aposm aware of other blogging platforms, however I really wanted to make my own website from scratch for many reasons, which I will list below:
+            I&apos;m aware of other blogging platforms, however I really wanted to make my own website from scratch for many reasons, which I will list below:
           </p>
           <ol className="list-decimal mx-4 pb-4">
             <li>It will give me much needed programming experience</li>
             <li>I never wanted to create a blog attached to a third service, and making it myself from scratch gives me the utmost freedom to do as I wish.</li>
-            <li>I think it will be fun to start from scratch and watch this website evolve, and if I&aposm really serious about it, in a few years time this could become quite the personal achievement.</li>
+            <li>I think it will be fun to start from scratch and watch this website evolve, and if I&apos;m really serious about it, in a few years time this could become quite the personal achievement.</li>
             <li>I like programming, I really do!</li>
           </ol>
           <p className="pb-4">
-            ...And looking at the preview after finishing the list I see that the left margin for the list doesn&apost line up with the other paragraphs, despite being within the same &aposdiv&apos 
-            and class. It&aposs seemingly illogical quirks like this that warrant the addition of the final point in the above list. Oh well, after a bit more tweaking I got it to work, evidently.
+            ...And looking at the preview after finishing the list I see that the left margin for the list doesn&apos;t line up with the other paragraphs, despite being within the same &apos;div&apos 
+            and class. It&apos;s seemingly illogical quirks like this that warrant the addition of the final point in the above list. Oh well, after a bit more tweaking I got it to work, evidently.
           </p>
           <p className="pb-4">
-            As I think about wrapping up this post, I realise that I won&apost be able to timestamp the post (time currently 01:59AM), since I don&apost have such functionality implemented yet. Oh well, I&aposm sure I&aposll 
+            As I think about wrapping up this post, I realise that I won&apos;t be able to timestamp the post (time currently 01:59AM), since I don&apos;t have such functionality implemented yet. Oh well, I&apos;m sure I&apos;ll 
             get around to that soon, right? For now, this is the birth of Yojinet (temp name?) :)
           </p>
         </div>
@@ -60,11 +60,11 @@ const Home = () => {
           <p className="pb-4">
             However, the notion that a worker was supposed to be round yesterday made me think about whether it would be the same worker who I saw when I first viewed the house last summer. 
             When I was viewed the house, it was undergoing summer renovations and the worker (who was quite chatty) was letting me know the reasons for this was essentially because the 
-            previous tenants destroyed the house. This was/is a student house, and I&aposve seen some pretty nasty ones, but apparently the destruction of this house was so bad it warranted a complete 
+            previous tenants destroyed the house. This was/is a student house, and I&apos;ve seen some pretty nasty ones, but apparently the destruction of this house was so bad it warranted a complete 
             renovation of the ground floor and the bathroom. If the workers words were anything to go by, part of the reason for the complete renovation of the bathroom was because these 
-            previous tenants had carved religious symbols directly into the walls with knives. A sharp pain in the side for the landlord and worker I&aposm sure (with the landlord also apparently 
+            previous tenants had carved religious symbols directly into the walls with knives. A sharp pain in the side for the landlord and worker I&apos;m sure (with the landlord also apparently 
             presenting a legal case to the previous tenants... yikes), but without the previous tenants unauthorised house modifications, me and my friends would be without a completely renovated 
-            ground floor and bathroom, and again, if you&aposve seen some student housing, you&aposll know how hard that can be to come by.
+            ground floor and bathroom, and again, if you&apos;ve seen some student housing, you&apos;ll know how hard that can be to come by.
           </p>
         </div>
       </div>
