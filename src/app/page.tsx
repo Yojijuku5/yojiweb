@@ -1,6 +1,7 @@
 "use client";
 import Timestamp from '@/components/currentTime';
 import Timepost from '@/components/timestamp';
+import Link from 'next/link';
 import { useState } from 'react';
 
 const Home = () => {
@@ -67,6 +68,16 @@ const Home = () => {
             ground floor and bathroom, and again, if you&apos;ve seen some student housing, you&apos;ll know how hard that can be to come by.
           </p>
         </div>
+        <div className="mx-4">
+          <p>Current Time: </p><Timestamp />
+        </div>
+        <div className="mx-4">
+          <button className="bg-indigo-500 rounded-lg" onClick={updateCurrentTime}>{showTime ? 'Hide Current Time' : 'Show Current Time'}</button>
+          <Timepost showTime={showTime}/>
+        </div>
+        <div className="mx-4">
+          <Link className="bg-green-400 rounded-lg" href="/works">Works</Link>
+        </div>
       </div>
     </main>
   )
@@ -75,11 +86,4 @@ const Home = () => {
 export default Home
 
 /*
-        <div className="mx-4">
-          <p>Current Time: </p><Timestamp />
-        </div>
-        <div className="mx-4">
-          <button className="bg-indigo-500 rounded-lg" onClick={updateCurrentTime}>{showTime ? 'Hide Current Time' : 'Show Current Time'}</button>
-          <Timepost showTime={showTime}/>
-        </div>
 */
