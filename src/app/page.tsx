@@ -66,13 +66,6 @@ const Home = () => {
             presenting a legal case to the previous tenants... yikes), but without the previous tenants unauthorised house modifications, me and my friends would be without a completely renovated 
             ground floor and bathroom, and again, if you've seen some student housing, you'll know how hard that can be to come by.
           </p>
-          <p className='pb-4'>
-            Probably the low point of the viewing last summer was when the worker was talking about the garden, and I wasn't fully paying attention and just kind of absent-mindedly nodded along, and at one 
-            point he smirked at me and I thought 'oh no, what did he say that I just nodded in agreement to?' Well, when we got to the first floor bedroom, he then mentioned something along the lines of 
-            the window 'being the perfect place to peep on the hot girl (clothed) in the garden across the road' and I then thought 'great, I've just wrongly presented myself as a peeping 
-            tom and now he thinks we share the same perverted hobby'. At that point all I could do was awkwardly laugh, and it didn't help that he mentioned this one more time to the 
-            worker from the estate agent who also rightly looked super uncomfortable at the comment.
-          </p>
         </div>
         <div className="mx-4">
           <p>Current Time: </p><Timestamp />
