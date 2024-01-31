@@ -67,13 +67,6 @@ const Home = () => {
             ground floor and bathroom, and again, if you&apos;ve seen some student housing, you&apos;ll know how hard that can be to come by.
           </p>
         </div>
-        <div className="mx-4">
-          <p>Current Time: </p><Timestamp />
-        </div>
-        <div className="mx-4">
-          <button className="bg-indigo-500 rounded-lg" onClick={updateCurrentTime}>{showTime ? 'Hide Current Time' : 'Show Current Time'}</button>
-          <Timepost showTime={showTime}/>
-        </div>
       </div>
     </main>
   )
@@ -82,5 +75,11 @@ const Home = () => {
 export default Home
 
 /*
-
+        <div className="mx-4">
+          <p>Current Time: </p><Timestamp />
+        </div>
+        <div className="mx-4">
+          <button className="bg-indigo-500 rounded-lg" onClick={updateCurrentTime}>{showTime ? 'Hide Current Time' : 'Show Current Time'}</button>
+          <Timepost showTime={showTime}/>
+        </div>
 */
