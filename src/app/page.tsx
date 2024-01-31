@@ -37,31 +37,36 @@ export default function Home() {
             get around to that soon, right? For now, this is the birth of Yojiweb (temp name?) :)
           </p>
         </div>
+                <div className="flex-auto h-10 mx-4">
+          <h1 className="text-3xl bg-blue-500">31st January 2024</h1>
+        </div>
+        <div className="mx-4">
+          <p className="pb-4">
+            Yesterday someone was supposed to come around to fix a few issues with the house, one of them being to replace the garden door because recent strong winds from Storm Isha 
+            blew a few of the wooden right of the door. In the end, they never turned up, and the estate agents sent me a message the next day (today) asking for confirmation that 
+            our house issues were fixed. They recieved a kind reply that stated no.
+          </p>
+          <p className="pb-4">
+            However, the notion that a worker was supposed to be round yesterday made me think about whether it would be the same worker who I saw when I first viewed the house last summer. 
+            When I was viewed the house, it was undergoing summer renovations and the worker (who was quite chatty) was letting me know the reasons for this was essentially because the 
+            previous tenants destroyed the house. This was/is a student house, and I've seen some pretty nasty ones, but apparently the destruction of this house was so bad it warranted a complete 
+            renovation of the ground floor and the bathroom. If the workers words were anything to go by, part of the reason for the complete renovation of the bathroom was because these 
+            previous tenants had carved religious symbols directly into the walls with knives. A sharp pain in the side for the landlord and worker I'm sure (with the landlord also apparently 
+            presenting a legal case to the previous tenants... yikes), but without the previous tenants unauthorised house modifications, me and my friends would be without a completely renovated 
+            ground floor and bathroom, and again, if you've seen some student housing, you'll know how hard that can be to come by.
+          </p>
+        </div>
       </div>
     </main>
   )
 }
 
 /*
-        <div className="flex-auto h-10 mx-4">
-          <h1 className="text-3xl bg-blue-500">Date 2</h1>
+        <div className="mx-4">
+          <p>Current Time: </p><Timestamp />
         </div>
         <div className="mx-4">
-          <p className="pb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a tristique sem, 
-            condimentum egestas augue. Vestibulum tincidunt dignissim lobortis. Aliquam erat volutpat. 
-            Nam arcu quam, semper commodo laoreet vel, aliquet eget tortor. Proin pellentesque efficitur nunc ac porta. 
-            Cras vulputate ac dolor vel gravida. Sed eget libero a sem tincidunt convallis. Duis sit amet dolor id arcu pretium finibus. 
-            Morbi non convallis neque. Phasellus accumsan feugiat risus.
-          </p>
-          <p className="pb-4">
-            Cras vitae felis non est efficitur fermentum sit amet vitae nibh. 
-            Suspendisse porta erat et ex pretium, ut finibus orci feugiat. Sed pellentesque non urna vel convallis. 
-            Mauris sagittis mattis felis, in molestie erat commodo in. Morbi eu quam ac lorem bibendum sodales ac sit amet odio. 
-            Nullam varius leo et turpis iaculis, at iaculis ipsum dignissim. Proin sit amet massa nec tortor sodales dapibus. 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor, odio in mattis euismod, magna mi pretium metus, 
-            non mollis eros est nec urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-            Nullam magna lectus, maximus a nisi eu, auctor mollis lacus.
-          </p>
+          <button className="bg-indigo-500 rounded-lg" onClick={updateCurrentTime}>{showTime ? 'Hide Current Time' : 'Show Current Time'}</button>
+          <Timepost showTime={showTime}/>
         </div>
 */
