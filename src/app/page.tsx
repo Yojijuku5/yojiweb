@@ -64,7 +64,7 @@ const Home = () => {
             renovation of the ground floor and the bathroom. If the workers words were anything to go by, part of the reason for the complete renovation of the bathroom was because these 
             previous tenants had carved religious symbols directly into the walls with knives. A sharp pain in the side for the landlord and worker I&aposm sure (with the landlord also apparently 
             presenting a legal case to the previous tenants... yikes), but without the previous tenants unauthorised house modifications, me and my friends would be without a completely renovated 
-            ground floor and bathroom, and again, if you've seen some student housing, you&aposll know how hard that can be to come by.
+            ground floor and bathroom, and again, if you&aposve seen some student housing, you&aposll know how hard that can be to come by.
           </p>
         </div>
       </div>
