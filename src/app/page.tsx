@@ -45,7 +45,7 @@ const Home = () => {
           </p>
           <p className="pb-4">
             As I think about wrapping up this post, I realise that I won&apos;t be able to timestamp the post (time currently 01:59AM), since I don&apos;t have such functionality implemented yet. Oh well, I&apos;m sure I&apos;ll 
-            get around to that soon, right? For now, this is the birth of Yojinet (temp name?) :)
+            get around to that soon, right? For now, this is the birth of Yojiweb (temp name?) :)
           </p>
         </div>
         <div className="flex-auto h-10 mx-4">
@@ -67,19 +67,33 @@ const Home = () => {
             ground floor and bathroom, and again, if you&apos;ve seen some student housing, you&apos;ll know how hard that can be to come by.
           </p>
         </div>
+        <div className="flex-auto h-10 mx-4">
+          <h1 className="text-3xl bg-blue-500">1st February 2024</h1>
+        </div>
+        <div className="mx-4">
+          <p className="pb-4">
+            Two days later, and no new features have been implemented yet, womp womp. However, I <span className="italic">have</span> been working behind the scenes and learning/developing 
+            a few small things that I hope to push through within the next week or so... hopefully. I even have a &apos;dev&apos; branch on the github repository for the website now! I <span className="italic">am </span>
+            a proper web developer now! Woo!!!
+          </p>
+          <p className="pb-4">
+            One thing I&apos;ve been taking a look at in preparation for on-site text editing (as opposed to directly into the code) is a text editor framework called <a href="https://docs.slatejs.org/" className="text-blue-500">Slate</a>. 
+            From my brief look through what it does, it seems like the perfect sort of thing, being easy to implement, while providing many different customisations which should make writing posts like this 
+            a lot easier. For example, right now every time I want to italicise something, I have to implement the <code className="font-mono text-gray-800">&lt;span className="italic"&gt;</code> tags 
+            manually, and having a text editor will greatly simplify the process. By streamlining the whole process, it makes the website more accessible as a product, and even though I will be the 
+            only one posting, if I ever wanted to add any interactive features, having the text editor implemented will surely make it easier in the future.
+          </p>
+          <p className="pb-4">
+            The largest development problem would probably be having to integrate the database into the website to make sure I&apos;m the only one able to create these posts. Essentially, 
+            I would need to give myself admin rights, to prevent random people from also being able to post. It wouldn&apos;t be a personal website if anyone who visited could post whatever they want, not to mention there isn&apos;t any sort of word blacklist 
+            set up either. It would be strange if anyone could post and their post would appear right along mine and anyone else&apos;s on the site for all to see. Although, this could be the 
+            sort of thing that might foster a sense of community... Everyone would be in on the conversation, and no one person would be &apos;above&apos; anyone else... Maybe I could add a feature where a user 
+            could &apos;like&apos; a post that they enjoyed even? Hmmm, I think I&apos;m onto something...
+          </p>
+        </div>
       </div>
     </main>
   )
 }
 
 export default Home
-
-/*
-        <div className="mx-4">
-          <p>Current Time: </p><Timestamp />
-        </div>
-        <div className="mx-4">
-          <button className="bg-indigo-500 rounded-lg" onClick={updateCurrentTime}>{showTime ? 'Hide Current Time' : 'Show Current Time'}</button>
-          <Timepost showTime={showTime}/>
-        </div>
-*/
