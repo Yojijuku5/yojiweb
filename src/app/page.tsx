@@ -79,7 +79,7 @@ const Home = () => {
           <p className="pb-4">
             One thing I&apos;ve been taking a look at in preparation for on-site text editing (as opposed to directly into the code) is a text editor framework called <a href="https://docs.slatejs.org/" className="text-blue-500">Slate</a>. 
             From my brief look through what it does, it seems like the perfect sort of thing, being easy to implement, while providing many different customisations which should make writing posts like this 
-            a lot easier. For example, right now every time I want to italicise something, I have to implement the <code className="font-mono text-gray-800">&lt;span className="italic"&gt;</code> tags 
+            a lot easier. For example, right now every time I want to italicise something, I have to implement the <code className="font-mono text-gray-800">&lt;span className=&quot;italic&quot;&gt;</code> tags 
             manually, and having a text editor will greatly simplify the process. By streamlining the whole process, it makes the website more accessible as a product, and even though I will be the 
             only one posting, if I ever wanted to add any interactive features, having the text editor implemented will surely make it easier in the future.
           </p>
