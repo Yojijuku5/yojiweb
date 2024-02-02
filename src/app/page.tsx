@@ -91,6 +91,43 @@ const Home = () => {
             could &apos;like&apos; a post that they enjoyed even? Hmmm, I think I&apos;m onto something...
           </p>
         </div>
+        <div className="flex-auto h-10 mx-4">
+          <h1 className="text-3xl bg-blue-500">2nd February 2024</h1>
+        </div>
+        <div className="mx-4">
+          <p className="pb-4 font-bold">
+            Things I MUST do (but will probably leave until the last minute):
+          </p>
+          <ul className="list-disc mx-4 pb-4">
+            <li>My final year dissertation computer program</li>
+            <li>Applications for a summer internship</li>
+            <li>Applications for a graduate job (instead of a master&apos;s degree)</li>
+            <li>Applications for a master&apos;s degree (instead of a graduate job)</li>
+            <li>Reimbursement forms for my university society purchases</li>
+          </ul>
+          <p className="pb-4 font-bold">
+            Things I would like to do instead (and will probably continue doing instead of the more important things):
+          </p>
+          <ul className="list-disc mx-4 pb-4">
+            <li>Continue developing this website</li>
+            <li>Play this month's round of Taiko no Tatsujin: Rhythm Festival song additions</li>
+            <li>Spend more time on The Idolm@ster Million Live: Theater Days</li>
+            <li>Purchase Lethal Company</li>
+            <li>Go on a nice walk</li>
+            <li>Get more used to using social media</li>
+          </ul>
+          <p className="pb-4 font-bold">
+            Things I can do (that I probably won't) to give me more free time:
+          </p>
+          <ul className="list-disc mx-4 pb-4">
+            <li>Have a proper sleep schedule</li>
+            <li>Take shorter showers</li>
+            <li>Attend fewer university lectures</li>
+            <li>Watch less youtube</li>
+            <li>Browse less social media</li>
+            <li>Simply stop being lazy</li>
+          </ul>
+        </div>
       </div>
     </main>
   )
