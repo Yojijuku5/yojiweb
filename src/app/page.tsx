@@ -110,14 +110,14 @@ const Home = () => {
           </p>
           <ul className="list-disc mx-4 pb-4">
             <li>Continue developing this website</li>
-            <li>Play this month's round of Taiko no Tatsujin: Rhythm Festival song additions</li>
+            <li>Play this month&apos;s round of Taiko no Tatsujin: Rhythm Festival song additions</li>
             <li>Spend more time on The Idolm@ster Million Live: Theater Days</li>
             <li>Purchase Lethal Company</li>
             <li>Go on a nice walk</li>
             <li>Get more used to using social media</li>
           </ul>
           <p className="pb-4 font-bold">
-            Things I can do (that I probably won't) to give me more free time:
+            Things I can do (that I probably won&apos;t) to give me more free time:
           </p>
           <ul className="list-disc mx-4 pb-4">
             <li>Have a proper sleep schedule</li>
