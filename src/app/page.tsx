@@ -3,16 +3,37 @@ import Timestamp from '@/components/currentTime';
 import Timepost from '@/components/timestamp';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useSession, signIn, signOut } from "next-auth/react"
 
 const Home = () => {
+  const { data: session, status } = useSession();
+  const userEmail = session?.user?.email;
+
   const [showTime, setShowTime] = useState(false);
 
   const updateCurrentTime = () => {
     setShowTime((showTime) => !showTime);
   }
 
+  if (status === "loading") {
+    return <p>Hang on...</p>
+  }
+
+  if (status === "authenticated") {
+    return (
+      <div>
+        <p>Signed in as {userEmail}</p>
+        <button onClick={() => signOut()}>Sign out</button>
+      </div>
+    )
+  }
+
   return (
     <main>
+      <div>
+        <p>Not signed in</p>
+        <button onClick={() => signIn("github")}>Sign in</button>
+      </div>
       <div className="flex-col">
         <div className="flex-auto h-20 text-center text-5xl">
           <h1 className="my-4">Yojiweb</h1>
