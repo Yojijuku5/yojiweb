@@ -128,6 +128,14 @@ const Home = () => {
             <li>Simply stop being lazy</li>
           </ul>
         </div>
+        <div className="mx-4">
+          <p className="pb-4">
+            Setsubun Soybeans:
+          </p>
+          <p className="pb-4">
+            1 Bean, 2 Bean, 3 Bean, 4 Bean, 5 Bean, 6 Bean, 7 Bean, 8 Bean, 9 Bean, 10 Bean, 11 Bean, 12 Bean, 13 Bean, 14 Bean, 15 Bean, 16 Bean, 17 Bean, 18 Bean, 19 Bean, 20 Bean.
+          </p>
+        </div>
       </div>
     </main>
   )
