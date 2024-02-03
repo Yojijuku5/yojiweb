@@ -128,8 +128,11 @@ const Home = () => {
             <li>Simply stop being lazy</li>
           </ul>
         </div>
+        <div className="flex-auto h-10 mx-4">
+          <h1 className="text-3xl bg-blue-500">3rd February 2024</h1>
+        </div>
         <div className="mx-4">
-          <p className="pb-4">
+          <p>
             Setsubun Soybeans:
           </p>
           <p className="pb-4">
