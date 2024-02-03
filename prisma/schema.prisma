@@ -1,0 +1,26 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url = env("POSTGRES_PRISMA_URL")
+    directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model User {
+    id Int @id @default(autoincrement())
+    name String @unique
+    email String @unique
+    isAdmin Boolean
+    Posts Post[]
+}
+
+model Post {
+    id Int @id @default(autoincrement())
+    title String @unique
+    content String @db.Text @unique
+    author User @relation(fields: [authorId], references: [id])
+    authorId Int
+    publish_date DateTime @default(now())
+}
