@@ -139,6 +139,29 @@ const Home = () => {
             1 Bean, 2 Bean, 3 Bean, 4 Bean, 5 Bean, 6 Bean, 7 Bean, 8 Bean, 9 Bean, 10 Bean, 11 Bean, 12 Bean, 13 Bean, 14 Bean, 15 Bean, 16 Bean, 17 Bean, 18 Bean, 19 Bean, 20 Bean.
           </p>
         </div>
+        <div className="flex-auto h-10 mx-4">
+          <h1 className="text-3xl bg-blue-500">4th February 2024</h1>
+        </div>
+        <div className="mx-4">
+          <p className="pb-4">
+            Today I had no idea what to write for the website (I do really want to try and have <span className="italic">something</span> on here every day), and so in a last-ditch attempt to try for at least something somewhat interesting, I think I'm going 
+            to write about one of my favourite alcoholic beverages (be warned, it is not exactly sophisticated, for I am not a sophisticated drinker; the drink I am about to describe 
+            being a staple of many a night out at my local Wetherspoons).
+          </p>
+          <p className="pb-4">
+            This drink is a Gin (preferably a double) with a mixer of Orange Juice. Yeah that's it. Simple, but delicious at the same time. Since I personally cannot take the taste of 
+            alcohol very well, I go out of my way to find a drink that masks the taste of the double-shot alcohol, and my first year student self found the perfect solution in this drink. 
+            Having tried Gin with a variety of other mixers, probably my favourite two would be Lemonade and Orange Juice. Lemonade is a classic mixer, but not as many people go for the Orange 
+            Juice, and I feel that the OJ does a better job at concealing the taste of alcohol (maybe not a good thing...), which is part of the reason for my affection towards this drink. 
+            Colloquially, such a drink has come to be known within my group of friends by the name 'egg', so called due to it's egg-yolk-like appearance, especially if the gin 
+            used is a Beefeater Blood Orange (which it typically is since for some reason this is the cheapest gin at the local Wetherspoons). 
+          </p>
+          <p className="pb-4">
+            Part of me wonders if at some point in my life I will move away from having a Gin and OJ on a night out. Perhaps I will be finanically stable enough to go to a proper pub, 
+            or my tastes will move me away from the drink. I don't like the taste of beer (and beer-adjacent drinks) or wine though, which significantly restricts my choice, so for now 
+            at least, on a night out I will carry on consuming the egg.
+          </p>
+        </div>
       </div>
     </main>
   )
