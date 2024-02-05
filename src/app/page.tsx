@@ -162,6 +162,34 @@ const Home = () => {
             at least, on a night out I will carry on consuming the egg.
           </p>
         </div>
+        <div className="flex-auto h-10 mx-4">
+          <h1 className="text-3xl bg-blue-500">5th February 2024</h1>
+        </div>
+        <div className="mx-4">
+          <p className="pb-4">
+            I&apos;ve decided this week is going to be <span className="font-bold">Good Sleep-schedule Week.</span>
+          </p>
+          <p className="pb-4">
+            I&apos;ve been thinking for the past few days that as I add more and more things to my daily routine (the biggest being writing/developing this website, among other things in 
+            my life), it would be nice if I could restructure my daily routine to be more productive, because right now there&apos;s a whole lot of sitting around doing nothing, scrolling 
+            social media, being too tired, or asleep. Part of the reason for this includes late nights and the consequent late mornings which would find much more use if I was actually 
+            awake to take advantage of them. Who knows, maybe I just end up doing a whole lot of nothing in the mornings instead now, but at least I can say I&apos;ve tried. 
+          </p>
+          <p className="pb-4">
+            What are the rules for this &apos;challenge&apos; then? First, I need to a strict early-ish bedtime as well as a reasonable wake-up time. These times are going to be 01:00am at the 
+            very latest, and then I will set my alarm for an 08:30am wake-up time. If I follow these rules, this should give me 7 hours and 30 minutes of sleep per night, which even 
+            though I currently average 8-10 hours, it is still healthy amount of sleep, and really I hope to cut my sleep down, again so that I can have more time being awake and productive. 
+            If I go to sleep (i.e. lights out) at anytime before 01:00am, and wake up at around 08:30am(+- thirty minutes), then this will count as a success.
+            Second, I will try my best to stick to the experiment for every night this week, however if I end up at a night out with my friends, in such an instance I will make myself 
+            and exception to the challenge for that night. Some may say that&apos;s being too easy on myself, but I see these social events as valid exceptions since they are also in a different 
+            way productive uses of my time. Third, I will, with 100% accuracy, post my bedtime and wake-up time on this website everyday this week, starting with tomorrow&apos;s post (posting 
+            today&apos;s bedtime and tomorrow&apos;s wake-up time). By posting on the website, I hold myself to respecting the rules of the challenge, considering that in theory, anyone could be 
+            reading the blog, and if they could speak, they could provide their thoughts on my successes or failures.
+          </p>
+          <p className="pb-4">
+            And so, with the rules laid out in front of me here, it&apos;s game on. Good luck to me, and I hope something productive comes out of this experiment.
+          </p>
+        </div>
       </div>
     </main>
   )
