@@ -190,6 +190,25 @@ const Home = () => {
             And so, with the rules laid out in front of me here, it&apos;s game on. Good luck to me, and I hope something productive comes out of this experiment.
           </p>
         </div>
+        <div className="flex-auto h-10 mx-4">
+          <h1 className="text-3xl bg-blue-500">6th February 2024</h1>
+        </div>
+        <div className="mx-4">
+          <p>
+            Lights-out: 00:56am
+          </p>
+          <p className="pb-4">
+            Wake-up: 08:25am (Out of bed: 09:30am)
+          </p>
+          <p>
+            First day down, at least 4 more days to go.
+          </p>
+          <p className="pb-4">
+            To be honest, it was eaaaaasy today. I had no trouble whatsoever. However, I feel that the challenge lies in sticking to the schedule and making sure I stop whatever I&apos;m 
+            doing to be ready for bed by 1am. So I can only expect the challenge to get harder and harder as the week progresses. I&apos;m sure if you looked at the times I&apos;m setting myself 
+            though, you&apos;d see that relatively this is easy mode and really just a normal person&apos;s sleep schedule.
+          </p>
+        </div>
       </div>
     </main>
   )
