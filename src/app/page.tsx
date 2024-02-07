@@ -220,7 +220,7 @@ const Home = () => {
               Wake-up: 08:35am (Out of bed: 09:45am)
           </p>
           <p>
-              Note to self: Never make fried chicken from scratch that serves 20 people ever again. It takes far too long, is finicky and I'm better of making something simpler like curry 
+              Note to self: Never make fried chicken from scratch that serves 20 people ever again. It takes far too long, is finicky and I&apos;m better of making something simpler like curry 
               or a salad.
           </p>
         </div>
