@@ -209,6 +209,21 @@ const Home = () => {
             though, you&apos;d see that relatively this is easy mode and really just a normal person&apos;s sleep schedule.
           </p>
         </div>
+        <div className="flex-auto h-10 mx-4">
+          <h1 className="text-3xl bg-blue-500">7th February 2024</h1>
+        </div>
+        <div className="mx-4">
+          <p>
+              Lights-out: 01:07am
+          </p>
+          <p className="pb-4">
+              Wake-up: 08:35am (Out of bed: 09:45am)
+          </p>
+          <p>
+              Note to self: Never make fried chicken from scratch that serves 20 people ever again. It takes far too long, is finicky and I'm better of making something simpler like curry 
+              or a salad.
+          </p>
+        </div>
       </div>
     </main>
   )
