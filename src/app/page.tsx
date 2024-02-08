@@ -224,6 +224,42 @@ const Home = () => {
               or a salad.
           </p>
         </div>
+        <div className="flex-auto h-10 mx-4">
+          <h1 className="text-3xl bg-blue-500">8th February 2024</h1>
+        </div>
+        <div className="mx-4">
+          <p>
+            Lights-out: 02:30am (Uh-oh...)
+          </p>
+          <p className="pb-4">
+            Wake-up: 08:25am (Out of bed: 08:35am) Safe! ...Kinda, I was busy yesterday hence the late night.
+          </p>
+          <p className="pb-4">
+            For my music streaming, my service of choice is Youtube Music, and in a world dominated by Spotify/Apple music users, I often get confused looks whenever I mention this. 
+            The main reason I use Youtube Music though, is because they let you play regular youtube videos with the screen off without buying the full Youtube premium subscription 
+            (just music is cheaper), plus being able to add these Youtube videos to the same playlist as all the other regular music tracks. This is particularly useful if you&apos;re 
+            like me and like listening to game music, much of which isn&apos;t available on the typical music streaming services.
+          </p>
+          <p className="pb-4">
+            However, my biggest grievence with Youtube Music is the relative frequency that tracks will simply stop being playable, showing an exclamation mark over the track cover, 
+            and displaying a &apos;Song not playable&apos; if you attempt to click on the song. Apparently, the issue has to do with the way distrubution rights work on Youtube Music, and the 
+            issue is fixable, however it requires manually searching and re-adding the song to the playlist again. This is particularly annoying if you have all your music in one playlist consisting over 1600 
+            songs and you have to scroll through the entire playlist to find the one or two songs that suddenly stop working (not to mention the desktop webpage is poorly optimised so 
+            viewing any playlist with at least a few hundred songs completely lags the page). When this happens to multiple songs at once, it become visually (audibly?) noticeable, 
+            and looking through the playlist, it looks a lot like the great purge (unasked for) has just happened inside your personal music playlist.
+          </p>
+          <p className="pb-4">
+            Anyway, this happened to me recently, and Youtube <span className="italic">did</span> actually try to implement some sort of failsafe for this by automatically restoring the song 
+            if it becomes available again. You&apos;d be lucky to get it to work though, considering I still have to manually many of the songs myself, and sometimes the replacement for 
+            the original song becomes the instrumental version, which is obviously less than ideal. About a week has passed since the great song purge of the Yojijuku5 playlist, and 
+            unfortunately it&apos;s looking like I have to manually add all the songs back myself. It&apos;s probably less work at this point just making a new playlist...
+          </p>
+          <p className="pb-4">
+            Also, this isn&apos;t specifically to do with Youtube Music, and might just be a conspiracy, but I swear all online service &apos;shuffle&apos; buttons don&apos;t actually randomly 
+            shuffle the songs but instead shuffle with a weighting towards the songs most listened to over a period, which means there are a few songs that you <span className="italic">always</span> listen to, 
+            and consequently also songs that end up never getting listened too.
+          </p>
+        </div>
       </div>
     </main>
   )
