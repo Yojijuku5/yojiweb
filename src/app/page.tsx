@@ -268,11 +268,11 @@ const Home = () => {
             Lights-out: 02:45am
           </p>
           <p className="pb-4">
-            Wake-up: 11:45am (Out of bed: 11:45am) It's joever... I blame being busy on Wednesday.
+            Wake-up: 11:45am (Out of bed: 11:45am) It&apos;s joever... I blame being busy on Wednesday.
           </p>
           <p>
-            So my challenge to follow a reasonable sleep schedule met it's definite demise this morning as I woke up at 11:45am instead of 8:30am. Technically it ended when I went 
-            to sleep at 02:45am the previous night, but I was thinking that as long as I got up on time today it would be salvageable, but this didn't happen and today was a 
+            So my challenge to follow a reasonable sleep schedule met its definite demise this morning as I woke up at 11:45am instead of 8:30am. Technically it ended when I went 
+            to sleep at 02:45am the previous night, but I was thinking that as long as I got up on time today it would be salvageable, but this didn&apos;t happen and today was a 
             definite fail. Of course, considering this is <span className="font-bold">Good Sleep-schedule Week</span> I will still try for the remaining part of the week, but I 
             will not achieve my original goal of one full week of a good sleep schedule. In fact I only really achieved 3 days before a major failure...
           </p>
