@@ -261,7 +261,7 @@ const Home = () => {
           </p>
         </div>
         <div className="flex-auto h-10 mx-4">
-          <h1 className="text-3xl bg-blue-500">8th February 2024</h1>
+          <h1 className="text-3xl bg-blue-500">9th February 2024</h1>
         </div>
         <div className="mx-4">
           <p>
@@ -275,6 +275,23 @@ const Home = () => {
             to sleep at 02:45am the previous night, but I was thinking that as long as I got up on time today it would be salvageable, but this didn&apos;t happen and today was a 
             definite fail. Of course, considering this is <span className="font-bold">Good Sleep-schedule Week</span> I will still try for the remaining part of the week, but I 
             will not achieve my original goal of one full week of a good sleep schedule. In fact I only really achieved 3 days before a major failure...
+          </p>
+        </div>
+        <div className="flex-auto h-10 mx-4">
+          <h1 className="text-3xl bg-blue-500">10th February 2024</h1>
+        </div>
+        <div className="mx-4">
+          <p>
+            Lights-out: 04:00am
+          </p>
+          <p className="pb-4">
+            Wake-up: 12:15pm (Out of bed: 13:15pm) (...)
+          </p>
+          <p>
+            I went for a walk around my local area at around sunset time this afternoon. Despite mostly being filled with the same copy-paste Victorian era worker houses, there are 
+            actually quite a few picturesque scenes that I ingrained into my head and didn&apos;t take any photos of. Also, if you stray a bit further from the centre of the locale, the houses 
+            stray from the aformentioned Victorian housing style and the change in scenery also made the walk quite nice. I made a mental note to do this more often, and once I implement a proper database 
+            (which I was supposed to work on today but instead played Minecraft - hehe...), I can also take some photos to upload to the website.
           </p>
         </div>
       </div>
