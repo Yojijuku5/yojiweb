@@ -305,14 +305,14 @@ const Home = () => {
             Wake-up: 12:20pm (Out of bed: 13:30pm)
           </p>
           <p className="pb-4">
-            I know the sleep times aren't a good look. Lazy Sunday, forgive me. Typically I change out of my pyjamas even if I don't leave the house, but today I didn't even do that 
+            I know the sleep times aren&apos;t a good look. Lazy Sunday, forgive me. Typically I change out of my pyjamas even if I don&apos;t leave the house, but today I didn&apos;t even do that 
             so it really <span className="italic">was</span> a Lazy Sunday.
           </p>
           <p className="pb-4">
-            Typically, I try to write more than just a few lines for the website every day, but today this didn't happen, so it really <span className="italic">was</span> a Lazy Sunday.
+            Typically, I try to write more than just a few lines for the website every day, but today this didn&apos;t happen, so it really <span className="italic">was</span> a Lazy Sunday.
           </p>
           <p className="pb-4">
-            Typically, I shower every day even if I don't leave the house, but today I didn't even do that so it really <span className="italic">was</span> a Lazy Sunday.
+            Typically, I shower every day even if I don&apos;t leave the house, but today I didn&apos;t even do that so it really <span className="italic">was</span> a Lazy Sunday.
           </p>
         </div>
       </div>
