@@ -294,6 +294,27 @@ const Home = () => {
             (which I was supposed to work on today but instead played Minecraft - hehe...), I can also take some photos to upload to the website.
           </p>
         </div>
+        <div className="flex-auto h-10 mx-4">
+          <h1 className="text-3xl bg-blue-500">11th February 2024</h1>
+        </div>
+        <div className="mx-4">
+          <p>
+            Lights-out: 03:00am
+          </p>
+          <p className="pb-4">
+            Wake-up: 12:20pm (Out of bed: 13:30pm)
+          </p>
+          <p className="pb-4">
+            I know the sleep times aren't a good look. Lazy Sunday, forgive me. Typically I change out of my pyjamas even if I don't leave the house, but today I didn't even do that 
+            so it really <span className="italic">was</span> a Lazy Sunday.
+          </p>
+          <p className="pb-4">
+            Typically, I try to write more than just a few lines for the website every day, but today this didn't happen, so it really <span className="italic">was</span> a Lazy Sunday.
+          </p>
+          <p className="pb-4">
+            Typically, I shower every day even if I don't leave the house, but today I didn't even do that so it really <span className="italic">was</span> a Lazy Sunday.
+          </p>
+        </div>
       </div>
     </main>
   )
