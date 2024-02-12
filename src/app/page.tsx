@@ -316,6 +316,32 @@ const Home = () => {
           </p>
         </div>
       </div>
+      <div className="flex-auto h-10 mx-4">
+          <h1 className="text-3xl bg-blue-500">12th February 2024</h1>
+        </div>
+        <div className="mx-4">
+          <p>
+            Lights-out: 01:30am
+          </p>
+          <p className="pb-4">
+            Wake-up: 12:30pm (Out of bed: 12:45pm)
+          </p>
+          <p className="pb-4">
+            I&apos;ll write about what I&apos;ve learnt from recording my sleep/wake times for the past week tomorrow, but you can tell that once something significant had happened, it had doomed 
+            the rest of the week to an offset rhythm (or rather that it reformed into the pattern that prevailed for the rest of the week).
+          </p>
+          <p className="pb-4">
+            However today I wanted to write about something else. Today I ventured to the city centre to buy a few things, and during the walk there and back, I would sometimes 
+            have things that I thought would be good ideas to write about here on the website. Unfortunately, I didn&apos;t write any of it down, and the only thing I 
+            remember thinking about was that one of the Fishmongers have expanded and have now started selling a variety of fresh fruits, which I found amusing. 
+          </p>
+          <p className="pb-4">
+            Anyway, now that I&apos;m back home writing this post, I&apos;m thinking about ways I could keep a track of the thoughts that I have, and the most accessible answer would be through 
+            my phone. However I&apos;ve never really had the tendencies to want to constantly take photos or post on social media, and I always default to the thought that &apos;I&apos;ll remember 
+            when I get home&apos; which really is just cope. So I need to be able to get into the habit of writing things down, how can I do this? ...I don&apos;t know, to be honest. Next time 
+            I&apos;m out on a walk or something, I&apos;ll see if I can whip my phone out whenever I think of or notice something noteworthy. And then maybe it&apos;ll make it&apos;s way here, who knows?
+          </p>
+        </div>
     </main>
   )
 }
