@@ -1,0 +1,349 @@
+"use client";
+import Timestamp from '@/components/currentTime';
+import Timepost from '@/components/timestamp';
+import { useState } from 'react';
+
+const Temp = () => {
+    const [showTime, setShowTime] = useState(false);
+
+    const updateCurrentTime = () => {
+        setShowTime((showTime) => !showTime);
+    }
+
+    return (
+        <main>
+            <div className="flex-col">
+                <div className="flex-auto h-20 text-center text-5xl">
+                    <h1 className="my-4">Yojiweb</h1>
+                </div>
+                <div className="flex-auto h-10 mx-4">
+                    <h1 className="text-3xl bg-blue-500">30th January 2024</h1>
+                </div>
+                <div className="mx-4">
+                    <p className="pb-4">
+                        Finally got around to deploying the website I&apos;ve been thinking about making for the longest time. It says a few things about me that I would rather work on this instead of my University dissertation,
+                        despite my dissertation being about something I genuinly find interesting and linked to the industry that I want to eventually go into.
+                    </p>
+                    <p className="pb-4">
+                        For now, the website is very bare bones, consisting of... just this page and text. This post is even written directly into the source code haha, but hopefully I will
+                        feel motivated enough to evolve this page into something more whole. High up on the to-do list is to perhaps find a way to be able to post without directly entering the source code.
+                        Some more UI aesthetic as well (colours etc. currently being temporary), and then maybe a comment section, even if noone visits because I don&apos;t plan on telling the world about this site just yet.
+                        A database would probably do wonders on both the storage and the efficiency of the website too.
+                    </p>
+                    <p className="pb-4">
+                        I&apos;m aware of other blogging platforms, however I really wanted to make my own website from scratch for many reasons, which I will list below:
+                    </p>
+                    <ol className="list-decimal mx-4 pb-4">
+                        <li>It will give me much needed programming experience</li>
+                        <li>I never wanted to create a blog attached to a third service, and making it myself from scratch gives me the utmost freedom to do as I wish.</li>
+                        <li>I think it will be fun to start from scratch and watch this website evolve, and if I&apos;m really serious about it, in a few years time this could become quite the personal achievement.</li>
+                        <li>I like programming, I really do!</li>
+                    </ol>
+                    <p className="pb-4">
+                        ...And looking at the preview after finishing the list I see that the left margin for the list doesn&apos;t line up with the other paragraphs, despite being within the same &apos;div&apos
+                        and class. It&apos;s seemingly illogical quirks like this that warrant the addition of the final point in the above list. Oh well, after a bit more tweaking I got it to work, evidently.
+                    </p>
+                    <p className="pb-4">
+                        As I think about wrapping up this post, I realise that I won&apos;t be able to timestamp the post (time currently 01:59AM), since I don&apos;t have such functionality implemented yet. Oh well, I&apos;m sure I&apos;ll
+                        get around to that soon, right? For now, this is the birth of Yojiweb (temp name?) :)
+                    </p>
+                </div>
+                <div className="flex-auto h-10 mx-4">
+                    <h1 className="text-3xl bg-blue-500">31st January 2024</h1>
+                </div>
+                <div className="mx-4">
+                    <p className="pb-4">
+                        Yesterday someone was supposed to come around to fix a few issues with the house, one of them being to replace the garden door because recent strong winds from Storm Isha
+                        blew a few of the wooden right of the door. In the end, they never turned up, and the estate agents sent me a message the next day (today) asking for confirmation that
+                        our house issues were fixed. They recieved a kind reply that stated no.
+                    </p>
+                    <p className="pb-4">
+                        However, the notion that a worker was supposed to be round yesterday made me think about whether it would be the same worker who I saw when I first viewed the house last summer.
+                        When I was viewed the house, it was undergoing summer renovations and the worker (who was quite chatty) was letting me know the reasons for this was essentially because the
+                        previous tenants destroyed the house. This was/is a student house, and I&apos;ve seen some pretty nasty ones, but apparently the destruction of this house was so bad it warranted a complete
+                        renovation of the ground floor and the bathroom. If the workers words were anything to go by, part of the reason for the complete renovation of the bathroom was because these
+                        previous tenants had carved religious symbols directly into the walls with knives. A sharp pain in the side for the landlord and worker I&apos;m sure (with the landlord also apparently
+                        presenting a legal case to the previous tenants... yikes), but without the previous tenants unauthorised house modifications, me and my friends would be without a completely renovated
+                        ground floor and bathroom, and again, if you&apos;ve seen some student housing, you&apos;ll know how hard that can be to come by.
+                    </p>
+                </div>
+                <div className="flex-auto h-10 mx-4">
+                    <h1 className="text-3xl bg-blue-500">1st February 2024</h1>
+                </div>
+                <div className="mx-4">
+                    <p className="pb-4">
+                        Two days later, and no new features have been implemented yet, womp womp. However, I <span className="italic">have</span> been working behind the scenes and learning/developing
+                        a few small things that I hope to push through within the next week or so... hopefully. I even have a &apos;dev&apos; branch on the github repository for the website now! I <span className="italic">am </span>
+                        a proper web developer now! Woo!!!
+                    </p>
+                    <p className="pb-4">
+                        One thing I&apos;ve been taking a look at in preparation for on-site text editing (as opposed to directly into the code) is a text editor framework called <a href="https://docs.slatejs.org/" className="text-blue-500">Slate</a>.
+                        From my brief look through what it does, it seems like the perfect sort of thing, being easy to implement, while providing many different customisations which should make writing posts like this
+                        a lot easier. For example, right now every time I want to italicise something, I have to implement the <code className="font-mono text-gray-800">&lt;span className=&quot;italic&quot;&gt;</code> tags
+                        manually, and having a text editor will greatly simplify the process. By streamlining the whole process, it makes the website more accessible as a product, and even though I will be the
+                        only one posting, if I ever wanted to add any interactive features, having the text editor implemented will surely make it easier in the future.
+                    </p>
+                    <p className="pb-4">
+                        The largest development problem would probably be having to integrate the database into the website to make sure I&apos;m the only one able to create these posts. Essentially,
+                        I would need to give myself admin rights, to prevent random people from also being able to post. It wouldn&apos;t be a personal website if anyone who visited could post whatever they want, not to mention there isn&apos;t any sort of word blacklist
+                        set up either. It would be strange if anyone could post and their post would appear right along mine and anyone else&apos;s on the site for all to see. Although, this could be the
+                        sort of thing that might foster a sense of community... Everyone would be in on the conversation, and no one person would be &apos;above&apos; anyone else... Maybe I could add a feature where a user
+                        could &apos;like&apos; a post that they enjoyed even? Hmmm, I think I&apos;m onto something...
+                    </p>
+                </div>
+                <div className="flex-auto h-10 mx-4">
+                    <h1 className="text-3xl bg-blue-500">2nd February 2024</h1>
+                </div>
+                <div className="mx-4">
+                    <p className="pb-4 font-bold">
+                        Things I MUST do (but will probably leave until the last minute):
+                    </p>
+                    <ul className="list-disc mx-4 pb-4">
+                        <li>My final year dissertation computer program</li>
+                        <li>Applications for a summer internship</li>
+                        <li>Applications for a graduate job (instead of a master&apos;s degree)</li>
+                        <li>Applications for a master&apos;s degree (instead of a graduate job)</li>
+                        <li>Reimbursement forms for my university society purchases</li>
+                    </ul>
+                    <p className="pb-4 font-bold">
+                        Things I would like to do instead (and will probably continue doing instead of the more important things):
+                    </p>
+                    <ul className="list-disc mx-4 pb-4">
+                        <li>Continue developing this website</li>
+                        <li>Play this month&apos;s round of Taiko no Tatsujin: Rhythm Festival song additions</li>
+                        <li>Spend more time on The Idolm@ster Million Live: Theater Days</li>
+                        <li>Purchase Lethal Company</li>
+                        <li>Go on a nice walk</li>
+                        <li>Get more used to using social media</li>
+                    </ul>
+                    <p className="pb-4 font-bold">
+                        Things I can do (that I probably won&apos;t) to give me more free time:
+                    </p>
+                    <ul className="list-disc mx-4 pb-4">
+                        <li>Have a proper sleep schedule</li>
+                        <li>Take shorter showers</li>
+                        <li>Attend fewer university lectures</li>
+                        <li>Watch less youtube</li>
+                        <li>Browse less social media</li>
+                        <li>Simply stop being lazy</li>
+                    </ul>
+                </div>
+                <div className="flex-auto h-10 mx-4">
+                    <h1 className="text-3xl bg-blue-500">3rd February 2024</h1>
+                </div>
+                <div className="mx-4">
+                    <p>
+                        Setsubun Soybeans:
+                    </p>
+                    <p className="pb-4">
+                        1 Bean, 2 Bean, 3 Bean, 4 Bean, 5 Bean, 6 Bean, 7 Bean, 8 Bean, 9 Bean, 10 Bean, 11 Bean, 12 Bean, 13 Bean, 14 Bean, 15 Bean, 16 Bean, 17 Bean, 18 Bean, 19 Bean, 20 Bean.
+                    </p>
+                </div>
+                <div className="flex-auto h-10 mx-4">
+                    <h1 className="text-3xl bg-blue-500">4th February 2024</h1>
+                </div>
+                <div className="mx-4">
+                    <p className="pb-4">
+                        Today I had no idea what to write for the website (I do really want to try and have <span className="italic">something</span> on here every day), and so in a last-ditch attempt
+                        to try for at least something somewhat interesting, I think I&apos;m going to write about one of my favourite alcoholic beverages (be warned, it is not exactly sophisticated, for I am not a
+                        sophisticated drinker; the drink I am about to describe being a staple of many a night out at my local Wetherspoons).
+                    </p>
+                    <p className="pb-4">
+                        This drink is a Gin (preferably a double) with a mixer of Orange Juice. Yeah that&apos;s it. Simple, but delicious at the same time. Since I personally cannot take the taste of
+                        alcohol very well, I go out of my way to find a drink that masks the taste of the double-shot alcohol, and my first year student self found the perfect solution in this drink.
+                        Having tried Gin with a variety of other mixers, probably my favourite two would be Lemonade and Orange Juice. Lemonade is a classic mixer, but not as many people go for the Orange
+                        Juice, and I feel that the OJ does a better job at concealing the taste of alcohol (maybe not a good thing...), which is part of the reason for my affection towards this drink.
+                        Colloquially, such a drink has come to be known within my group of friends by the name &apos;egg&apos;, so called due to it&apos;s egg-yolk-like appearance, especially if the gin
+                        used is a Beefeater Blood Orange (which it typically is since for some reason this is the cheapest gin at the local Wetherspoons).
+                    </p>
+                    <p className="pb-4">
+                        Part of me wonders if at some point in my life I will move away from having a Gin and OJ on a night out. Perhaps I will be finanically stable enough to go to a proper pub,
+                        or my tastes will move me away from the drink. I don&apos;t like the taste of beer (and beer-adjacent drinks) or wine though, which significantly restricts my choice, so for now
+                        at least, on a night out I will carry on consuming the egg.
+                    </p>
+                </div>
+                <div className="flex-auto h-10 mx-4">
+                    <h1 className="text-3xl bg-blue-500">5th February 2024</h1>
+                </div>
+                <div className="mx-4">
+                    <p className="pb-4">
+                        I&apos;ve decided this week is going to be <span className="font-bold">Good Sleep-schedule Week.</span>
+                    </p>
+                    <p className="pb-4">
+                        I&apos;ve been thinking for the past few days that as I add more and more things to my daily routine (the biggest being writing/developing this website, among other things in
+                        my life), it would be nice if I could restructure my daily routine to be more productive, because right now there&apos;s a whole lot of sitting around doing nothing, scrolling
+                        social media, being too tired, or asleep. Part of the reason for this includes late nights and the consequent late mornings which would find much more use if I was actually
+                        awake to take advantage of them. Who knows, maybe I just end up doing a whole lot of nothing in the mornings instead now, but at least I can say I&apos;ve tried.
+                    </p>
+                    <p className="pb-4">
+                        What are the rules for this &apos;challenge&apos; then? First, I need to a strict early-ish bedtime as well as a reasonable wake-up time. These times are going to be 01:00am at the
+                        very latest, and then I will set my alarm for an 08:30am wake-up time. If I follow these rules, this should give me 7 hours and 30 minutes of sleep per night, which even
+                        though I currently average 8-10 hours, it is still healthy amount of sleep, and really I hope to cut my sleep down, again so that I can have more time being awake and productive.
+                        If I go to sleep (i.e. lights out) at anytime before 01:00am, and wake up at around 08:30am(+- thirty minutes), then this will count as a success.
+                        Second, I will try my best to stick to the experiment for every night this week, however if I end up at a night out with my friends, in such an instance I will make myself
+                        and exception to the challenge for that night. Some may say that&apos;s being too easy on myself, but I see these social events as valid exceptions since they are also in a different
+                        way productive uses of my time. Third, I will, with 100% accuracy, post my bedtime and wake-up time on this website everyday this week, starting with tomorrow&apos;s post (posting
+                        today&apos;s bedtime and tomorrow&apos;s wake-up time). By posting on the website, I hold myself to respecting the rules of the challenge, considering that in theory, anyone could be
+                        reading the blog, and if they could speak, they could provide their thoughts on my successes or failures.
+                    </p>
+                    <p className="pb-4">
+                        And so, with the rules laid out in front of me here, it&apos;s game on. Good luck to me, and I hope something productive comes out of this experiment.
+                    </p>
+                </div>
+                <div className="flex-auto h-10 mx-4">
+                    <h1 className="text-3xl bg-blue-500">6th February 2024</h1>
+                </div>
+                <div className="mx-4">
+                    <p>
+                        Lights-out: 00:56am
+                    </p>
+                    <p className="pb-4">
+                        Wake-up: 08:25am (Out of bed: 09:30am)
+                    </p>
+                    <p>
+                        First day down, at least 4 more days to go.
+                    </p>
+                    <p className="pb-4">
+                        To be honest, it was eaaaaasy today. I had no trouble whatsoever. However, I feel that the challenge lies in sticking to the schedule and making sure I stop whatever I&apos;m
+                        doing to be ready for bed by 1am. So I can only expect the challenge to get harder and harder as the week progresses. I&apos;m sure if you looked at the times I&apos;m setting myself
+                        though, you&apos;d see that relatively this is easy mode and really just a normal person&apos;s sleep schedule.
+                    </p>
+                </div>
+                <div className="flex-auto h-10 mx-4">
+                    <h1 className="text-3xl bg-blue-500">7th February 2024</h1>
+                </div>
+                <div className="mx-4">
+                    <p>
+                        Lights-out: 01:07am
+                    </p>
+                    <p className="pb-4">
+                        Wake-up: 08:35am (Out of bed: 09:45am)
+                    </p>
+                    <p>
+                        Note to self: Never make fried chicken from scratch that serves 20 people ever again. It takes far too long, is finicky and I&apos;m better of making something simpler like curry
+                        or a salad.
+                    </p>
+                </div>
+                <div className="flex-auto h-10 mx-4">
+                    <h1 className="text-3xl bg-blue-500">8th February 2024</h1>
+                </div>
+                <div className="mx-4">
+                    <p>
+                        Lights-out: 02:30am (Uh-oh...)
+                    </p>
+                    <p className="pb-4">
+                        Wake-up: 08:25am (Out of bed: 08:35am) Safe! ...Kinda, I was busy yesterday hence the late night.
+                    </p>
+                    <p className="pb-4">
+                        For my music streaming, my service of choice is Youtube Music, and in a world dominated by Spotify/Apple music users, I often get confused looks whenever I mention this.
+                        The main reason I use Youtube Music though, is because they let you play regular youtube videos with the screen off without buying the full Youtube premium subscription
+                        (just music is cheaper), plus being able to add these Youtube videos to the same playlist as all the other regular music tracks. This is particularly useful if you&apos;re
+                        like me and like listening to game music, much of which isn&apos;t available on the typical music streaming services.
+                    </p>
+                    <p className="pb-4">
+                        However, my biggest grievence with Youtube Music is the relative frequency that tracks will simply stop being playable, showing an exclamation mark over the track cover,
+                        and displaying a &apos;Song not playable&apos; if you attempt to click on the song. Apparently, the issue has to do with the way distrubution rights work on Youtube Music, and the
+                        issue is fixable, however it requires manually searching and re-adding the song to the playlist again. This is particularly annoying if you have all your music in one playlist consisting over 1600
+                        songs and you have to scroll through the entire playlist to find the one or two songs that suddenly stop working (not to mention the desktop webpage is poorly optimised so
+                        viewing any playlist with at least a few hundred songs completely lags the page). When this happens to multiple songs at once, it become visually (audibly?) noticeable,
+                        and looking through the playlist, it looks a lot like the great purge (unasked for) has just happened inside your personal music playlist.
+                    </p>
+                    <p className="pb-4">
+                        Anyway, this happened to me recently, and Youtube <span className="italic">did</span> actually try to implement some sort of failsafe for this by automatically restoring the song
+                        if it becomes available again. You&apos;d be lucky to get it to work though, considering I still have to manually many of the songs myself, and sometimes the replacement for
+                        the original song becomes the instrumental version, which is obviously less than ideal. About a week has passed since the great song purge of the Yojijuku5 playlist, and
+                        unfortunately it&apos;s looking like I have to manually add all the songs back myself. It&apos;s probably less work at this point just making a new playlist...
+                    </p>
+                    <p className="pb-4">
+                        Also, this isn&apos;t specifically to do with Youtube Music, and might just be a conspiracy, but I swear all online service &apos;shuffle&apos; buttons don&apos;t actually randomly
+                        shuffle the songs but instead shuffle with a weighting towards the songs most listened to over a period, which means there are a few songs that you <span className="italic">always</span> listen to,
+                        and consequently also songs that end up never getting listened too.
+                    </p>
+                </div>
+                <div className="flex-auto h-10 mx-4">
+                    <h1 className="text-3xl bg-blue-500">9th February 2024</h1>
+                </div>
+                <div className="mx-4">
+                    <p>
+                        Lights-out: 02:45am
+                    </p>
+                    <p className="pb-4">
+                        Wake-up: 11:45am (Out of bed: 11:45am) It&apos;s joever... I blame being busy on Wednesday.
+                    </p>
+                    <p>
+                        So my challenge to follow a reasonable sleep schedule met its definite demise this morning as I woke up at 11:45am instead of 8:30am. Technically it ended when I went
+                        to sleep at 02:45am the previous night, but I was thinking that as long as I got up on time today it would be salvageable, but this didn&apos;t happen and today was a
+                        definite fail. Of course, considering this is <span className="font-bold">Good Sleep-schedule Week</span> I will still try for the remaining part of the week, but I
+                        will not achieve my original goal of one full week of a good sleep schedule. In fact I only really achieved 3 days before a major failure...
+                    </p>
+                </div>
+                <div className="flex-auto h-10 mx-4">
+                    <h1 className="text-3xl bg-blue-500">10th February 2024</h1>
+                </div>
+                <div className="mx-4">
+                    <p>
+                        Lights-out: 04:00am
+                    </p>
+                    <p className="pb-4">
+                        Wake-up: 12:15pm (Out of bed: 13:15pm) (...)
+                    </p>
+                    <p>
+                        I went for a walk around my local area at around sunset time this afternoon. Despite mostly being filled with the same copy-paste Victorian era worker houses, there are
+                        actually quite a few picturesque scenes that I ingrained into my head and didn&apos;t take any photos of. Also, if you stray a bit further from the centre of the locale, the houses
+                        stray from the aformentioned Victorian housing style and the change in scenery also made the walk quite nice. I made a mental note to do this more often, and once I implement a proper database
+                        (which I was supposed to work on today but instead played Minecraft - hehe...), I can also take some photos to upload to the website.
+                    </p>
+                </div>
+                <div className="flex-auto h-10 mx-4">
+                    <h1 className="text-3xl bg-blue-500">11th February 2024</h1>
+                </div>
+                <div className="mx-4">
+                    <p>
+                        Lights-out: 03:00am
+                    </p>
+                    <p className="pb-4">
+                        Wake-up: 12:20pm (Out of bed: 13:30pm)
+                    </p>
+                    <p className="pb-4">
+                        I know the sleep times aren&apos;t a good look. Lazy Sunday, forgive me. Typically I change out of my pyjamas even if I don&apos;t leave the house, but today I didn&apos;t even do that
+                        so it really <span className="italic">was</span> a Lazy Sunday.
+                    </p>
+                    <p className="pb-4">
+                        Typically, I try to write more than just a few lines for the website every day, but today this didn&apos;t happen, so it really <span className="italic">was</span> a Lazy Sunday.
+                    </p>
+                    <p className="pb-4">
+                        Typically, I shower every day even if I don&apos;t leave the house, but today I didn&apos;t even do that so it really <span className="italic">was</span> a Lazy Sunday.
+                    </p>
+                </div>
+            </div>
+            <div className="flex-auto h-10 mx-4">
+                <h1 className="text-3xl bg-blue-500">12th February 2024</h1>
+            </div>
+            <div className="mx-4">
+                <p>
+                    Lights-out: 01:30am
+                </p>
+                <p className="pb-4">
+                    Wake-up: 12:30pm (Out of bed: 12:45pm)
+                </p>
+                <p className="pb-4">
+                    I&apos;ll write about what I&apos;ve learnt from recording my sleep/wake times for the past week tomorrow, but you can tell that once something significant had happened, it had doomed
+                    the rest of the week to an offset rhythm (or rather that it reformed into the pattern that prevailed for the rest of the week).
+                </p>
+                <p className="pb-4">
+                    However today I wanted to write about something else. Today I ventured to the city centre to buy a few things, and during the walk there and back, I would sometimes
+                    have things that I thought would be good ideas to write about here on the website. Unfortunately, I didn&apos;t write any of it down, and the only thing I
+                    remember thinking about was that one of the Fishmongers have expanded and have now started selling a variety of fresh fruits, which I found amusing.
+                </p>
+                <p className="pb-4">
+                    Anyway, now that I&apos;m back home writing this post, I&apos;m thinking about ways I could keep a track of the thoughts that I have, and the most accessible answer would be through
+                    my phone. However I&apos;ve never really had the tendencies to want to constantly take photos or post on social media, and I always default to the thought that &apos;I&apos;ll remember
+                    when I get home&apos; which really is just cope. So I need to be able to get into the habit of writing things down, how can I do this? ...I don&apos;t know, to be honest. Next time
+                    I&apos;m out on a walk or something, I&apos;ll see if I can whip my phone out whenever I think of or notice something noteworthy. And then maybe it&apos;ll make it&apos;s way here, who knows?
+                </p>
+            </div>
+        </main>
+    )
+}
+
+export default Temp
