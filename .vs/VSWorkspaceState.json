@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\api",
+    "\\src\\app\\api\\add-pet",
+    "\\src\\app\\api\\view-table"
+  ],
+  "SelectedNode": "\\src\\app\\api\\add-pet\\route.tsx",
+  "PreviewInSolutionExplorer": false
+}
