@@ -1,15 +1,7 @@
 "use client";
-import Timestamp from '@/components/currentTime';
-import Timepost from '@/components/timestamp';
-import { useState } from 'react';
+import Link from 'next/link';
 
 const Home = () => {
-  const [showTime, setShowTime] = useState(false);
-
-  const updateCurrentTime = () => {
-    setShowTime((showTime) => !showTime);
-  }
-
   return (
     <main>
       <div className="flex-col">
@@ -17,7 +9,7 @@ const Home = () => {
           <h1 className="my-4">Yojiweb</h1>
         </div>
         <div className="flex-auto h-10 mx-4">
-          <h1 className="text-3xl bg-blue-500">Portfolio</h1>
+          <h1 className="text-3xl bg-[#FFCF99]">Portfolio</h1>
         </div>
         <div className="mx-4">
           <p className="pb-4">
@@ -25,6 +17,11 @@ const Home = () => {
           </p>
           <p className="pb-4">
             Under Construction
+          </p>
+        </div>
+        <div className="mx-4">
+          <p className="pb-4">
+            <Link href="/nikki">Temp</Link>
           </p>
         </div>
       </div>
