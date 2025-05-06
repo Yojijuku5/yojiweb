@@ -43,7 +43,7 @@ const Nikki = () => {
         </div>
         <div className="mx-4">
           <p className="pb-4">
-            一週間の軟禁（バイト）からやっと解放。久しぶりに市内行って、なんかアラブ系の人たちがデモやってて自分の隣にいたオバサンが自分に「Christ's sake, this is England!」言ってた。ちょっとビックリして「Oh...」しか返せなかったけどあーゆー人たち凄いなと思う。
+            一週間の軟禁（バイト）からやっと解放。久しぶりに市内行って、なんかアラブ系の人たちがデモやってて自分の隣にいたオバサンが自分に「Christ&apos;s sake, this is England!」言ってた。ちょっとビックリして「Oh...」しか返せなかったけどあーゆー人たち凄いなと思う。
           </p>
           <Image src="/20250505_135755.jpg" alt="Jollibee" width={200} height={200}/>
           <p className="pb-4">
