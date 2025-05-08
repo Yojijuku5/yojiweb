@@ -19,11 +19,6 @@ const Home = () => {
             Under Construction
           </p>
         </div>
-        <div className="mx-4">
-          <p className="pb-4">
-            <Link href="/nikki">Temp</Link>
-          </p>
-        </div>
       </div>
     </main>
   )
