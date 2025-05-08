@@ -9,10 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.5.0",
     "@vercel/postgres": "^0.10.0",
+    "@vercel/speed-insights": "^1.2.0",
+    "geist": "^1.4.2",
     "next": "^15.1.6",
+    "next-mdx-remote": "^5.0.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "sugar-high": "^0.9.3"
   },
   "devDependencies": {
     "@types/node": "^20",

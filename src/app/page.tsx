@@ -1,27 +1,17 @@
-"use client";
-import Link from 'next/link';
+import { BlogPosts } from '@/components/posts'
 
-const Home = () => {
+export default function Page() {
   return (
-    <main>
-      <div className="flex-col">
-        <div className="flex-auto h-20 text-center text-5xl">
-          <h1 className="my-4">Yojiweb</h1>
-        </div>
-        <div className="flex-auto h-10 mx-4">
-          <h1 className="text-3xl bg-[#FFCF99]">Portfolio</h1>
-        </div>
-        <div className="mx-4">
-          <p className="pb-4">
-            Temporarily go here: https://github.com/Yojijuku5
-          </p>
-          <p className="pb-4">
-            Under Construction
-          </p>
-        </div>
+    <section>
+      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+        My Portfolio
+      </h1>
+      <p className="mb-4">
+        {`Lorum Ipsum`}
+      </p>
+      <div className="my-8">
+        <BlogPosts />
       </div>
-    </main>
+    </section>
   )
 }
-
-export default Home
