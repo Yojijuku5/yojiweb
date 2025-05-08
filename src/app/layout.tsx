@@ -1,4 +1,4 @@
-import './globals.css'
+import '@/app/globals.css'
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
@@ -11,7 +11,7 @@ import { baseUrl } from '@/app/sitemap'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "temp",
+    default: "Yojiweb",
     template: "%s | temp",
   },
   description: "This is my portfolio.",
@@ -45,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={cx("text-black bg-white dark:text-white dark:bg-black", GeistSans.variable, GeistMono.variable)}>
-      <body className="antialiased max-w-x1 mx-4 mt-8 lg:mx-auto">
+      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <Navbar />
           {children}
