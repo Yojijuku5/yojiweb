@@ -2,7 +2,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        My Portfolio
+        About Me
       </h1>
       <p className="mb-4">
         {`Currently an enthusiastic and confident Master’s Computer Science student studying at Newcastle University with a focus on Games Engineering. 
