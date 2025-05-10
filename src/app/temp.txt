@@ -1,3 +1,5 @@
+todo: contact form and button on footer
+
 "use client";
 import Timestamp from '@/components/currentTime';
 import Timepost from '@/components/timestamp';
