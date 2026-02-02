@@ -35,3 +35,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# visual studio folder
+.vs/
+
+# text :)
+/src/app/temp.txt

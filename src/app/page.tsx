@@ -1,27 +1,14 @@
-"use client";
-import Link from 'next/link';
-
-const Home = () => {
+export default function Page() {
   return (
-    <main>
-      <div className="flex-col">
-        <div className="flex-auto h-20 text-center text-5xl">
-          <h1 className="my-4">Yojiweb</h1>
-        </div>
-        <div className="flex-auto h-10 mx-4">
-          <h1 className="text-3xl bg-[#FFCF99]">Portfolio</h1>
-        </div>
-        <div className="mx-4">
-          <p className="pb-4">
-            Temporarily go here: https://github.com/Yojijuku5
-          </p>
-          <p className="pb-4">
-            Under Construction
-          </p>
-        </div>
-      </div>
-    </main>
+    <section>
+      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+        About Me
+      </h1>
+      <p className="mb-4">
+        {`Currently a recently graduated enthusiastic and confident Master’s Computer Science student studying at Newcastle University with a focus on Games Engineering. 
+        Proven ability to communicate and work in a team effectively, as demonstrated through previous work and academic experience. 
+        In addition, is competent in multiple programming languages including C++ and makes use of them frequently.`}
+      </p>
+    </section>
   )
 }
-
-export default Home
