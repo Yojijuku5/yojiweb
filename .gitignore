@@ -38,3 +38,6 @@ next-env.d.ts
 
 # visual studio folder
 .vs/
+
+# text :)
+/src/app/temp.txt
