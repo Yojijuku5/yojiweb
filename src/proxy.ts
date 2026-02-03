@@ -15,11 +15,12 @@ export default function proxy(req: NextRequest) {
         subDomain = hostName.replace(`.${rootDomain}`, "").split(".")[0]
     }
 
-    if (!subDomain || subDomain === "www" || hostName === rootDomain) {
-        return NextResponse.rewrite(new URL(`/`, req.url))
+    if (!subDomain || subDomain === 'www') {
+        return NextResponse.next()
     }
 
-    return NextResponse.rewrite(new URL(`/app/${subDomain}`, req.url))
+    url.pathname = `/app/${subDomain}${url.pathname}`
+    return NextResponse.rewrite(url)
 }
 
 /*
