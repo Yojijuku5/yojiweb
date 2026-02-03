@@ -5,22 +5,29 @@ export const config = {
 }
 
 export default function proxy(req: NextRequest) {
-    const url = req.nextUrl
-    let hostName = req.headers.get("host") || ""
-
+    //const url = req.nextUrl
+    const hostName = req.headers.get("host") || ""
+    //let hostName = req.headers.get("host") || ""
     const rootDomain = "yojiweb.com"
 
-    let subDomain = ""
-    if (hostName.endsWith(`.${rootDomain}`)) {
-        subDomain = hostName.replace(`.${rootDomain}`, "").split(".")[0]
+    //let subDomain = ""
+    if (!hostName.endsWith(`.${rootDomain}`)) {
+        return NextResponse.next()
+        //subDomain = hostName.replace(`.${rootDomain}`, "").split(".")[0]
     }
+
+    const subDomain = hostName.replace(`.${rootDomain}`, "").split(".")[0]
 
     if (!subDomain || subDomain === 'www') {
         return NextResponse.next()
     }
 
-    url.pathname = `/app/${subDomain}${url.pathname}`
+    const url = req.nextUrl
+    url.pathname = "/tatsujinradio"
     return NextResponse.rewrite(url)
+
+    //url.pathname = `/app/${subDomain}${url.pathname}`
+    //return NextResponse.rewrite(url)
 }
 
 /*
