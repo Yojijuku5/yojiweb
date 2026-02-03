@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: "Yojiweb",
-    template: "%s | temp",
+    template: "%s",
   },
   description: "This is my portfolio.",
   openGraph: {
