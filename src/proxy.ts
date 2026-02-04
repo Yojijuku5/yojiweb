@@ -11,9 +11,7 @@ export default function proxy(req: NextRequest) {
 
     console.log(JSON.stringify({
         hostname,
-        baseDomain: process.env.BASE_DOMAIN,
         currentHost,
-        env: process.env.NODE_ENV,
     }))
 
     if (!currentHost) {
