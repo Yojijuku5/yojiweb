@@ -17,5 +17,10 @@ export async function GET() {
 		releaseDate: new Date(track.release),
 	}))
 
-	return NextResponse.json(result)
+	return NextResponse.json(result, {
+		headers: {
+			"Access-Control-Allow-Origin": "https://tatsujinradio.yojiweb.com",
+			"Access-Control-Allow-Methods": "GET",
+		}
+	})
 }
