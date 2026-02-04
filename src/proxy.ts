@@ -1,12 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-export function proxy(req: NextRequest) {
-    const host = req.headers.get("host") || ""
+export const config = {
+    matcher: ["/((?!_next|favicon.ico|.*\\..*).*)"],
+}
 
-    const subdomain = host.split(".")[0]
+export default function proxy(req: NextRequest) {
+    const hostname = req.headers.get("host")
 
-    if (subdomain == "tatsujinradio") {
-        return NextResponse.rewrite(new URL("/tatsujinradio", req.url))
+    const currentHost = hostname.split(".")[0]
+
+    console.log(JSON.stringify({
+        hostname,
+        currentHost,
+    }))
+
+    if (!currentHost) {
+        return NextResponse.next()
+    }
+
+    if (currentHost === "tatsujinradio") {
+        return NextResponse.rewrite(new URL(`/tatsujinradio`, req.url))
     }
 
     return NextResponse.next()
