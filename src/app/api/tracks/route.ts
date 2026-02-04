@@ -3,7 +3,7 @@ import path from 'path'
 import { NextResponse } from 'next/server'
 
 export async function GET() {
-	const jsonPath = path.join(process.cwd(), "https://yojiweb.com/data/tracks.json")
+	const jsonPath = path.join(process.cwd(), "/data/tracks.json")
 
 	const raw = fs.readFileSync(jsonPath, "utf-8")
 
