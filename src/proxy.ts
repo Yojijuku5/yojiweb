@@ -18,6 +18,7 @@ export default function proxy(req: NextRequest) {
         currentHost = hostname?.replace(`.localhost:3000`, "")
     }
 
+    console.log("BASE_DOMAIN:", process.env.BASE_DOMAIN)
     console.log("PARSED currentHost:", currentHost)
 
     if (!currentHost) {
