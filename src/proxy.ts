@@ -7,8 +7,6 @@ export const config = {
 export default function proxy(req: NextRequest) {
     const hostname = req.headers.get("host")
 
-    console.log("RAW HOST HEADER:", hostname)
-
     let currentHost
     if (process.env.NODE_ENV === "production") {
         const baseDomain = process.env.BASE_DOMAIN
@@ -18,19 +16,20 @@ export default function proxy(req: NextRequest) {
         currentHost = hostname?.replace(`.localhost:3000`, "")
     }
 
-    console.log("BASE_DOMAIN:", process.env.BASE_DOMAIN)
-    console.log("PARSED currentHost:", currentHost)
+    console.log(JSON.stringify({
+        hostname,
+        baseDomain: process.env.BASE_DOMAIN,
+        currentHost,
+        env: process.env.NODE_ENV,
+    }))
 
     if (!currentHost) {
-        console.log("No currentHost, skipping rewrite")
         return NextResponse.next()
     }
 
     if (currentHost === "tatsujinradio") {
-        console.log("Rewriting to /tatsujinradio")
         return NextResponse.rewrite(new URL(`/tatsujinradio`, req.url))
     }
 
-    console.log("No rewrite matched, continuing")
     return NextResponse.next()
 }
