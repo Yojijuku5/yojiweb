@@ -7,14 +7,7 @@ export const config = {
 export default function proxy(req: NextRequest) {
     const hostname = req.headers.get("host")
 
-    let currentHost
-    if (process.env.NODE_ENV === "production") {
-        const baseDomain = process.env.BASE_DOMAIN
-        currentHost = hostname?.replace(`.${baseDomain}`, "")
-    }
-    else {
-        currentHost = hostname?.replace(`.localhost:3000`, "")
-    }
+    const currentHost = hostname.split(".")[0]
 
     console.log(JSON.stringify({
         hostname,
