@@ -7,11 +7,12 @@ type Track = {
     src: string,
     title: string,
     artist: string,
-    bpm: number,
+    bpm: string,
     releaseDate: Date,
 }
 
 //what if i hooked it up to ESE directly, save space/time
+//order based on game inside the json
 export default function Player() {
     const [tracks, setTracks] = useState<Track[]>([])
 
@@ -23,6 +24,8 @@ export default function Player() {
     const [duration, setDuration] = useState(0)
 
     const progress = duration > 0 ? (currentTime / duration) * 100 : 0
+
+    const [isPlaying, setIsPlaying] = useState(true)
 
     const [history, setHistory] = useState<Track[]>([])
     const [historyIndex, setHistoryIndex] = useState(-1)
@@ -93,10 +96,12 @@ export default function Player() {
 
         if (audio.paused) {
             audio.play()
+            setIsPlaying(!isPlaying)
             return
         }
         else {
             audio.pause()
+            setIsPlaying(!isPlaying)
         }
     }
 
@@ -121,6 +126,8 @@ export default function Player() {
 
     //setting track history
     useEffect(() => {
+        if (!currentTrack) return
+
         if (navigatingRef.current) {
             navigatingRef.current = false
             return
@@ -155,55 +162,72 @@ export default function Player() {
 
     return (
         <section>
-            <p className="mb-4">Now Playing: {currentTrack?.title} - {currentTrack?.artist}</p>
-            <div className="mb-4">
-                <audio
-                    ref={audioRef}
-                    src={currentTrack?.src}
-                    onPlay={() => { userInteractionRef.current = true }}
-                    onEnded={() => { nextTrack() }}
-                    onLoadedMetadata={(e) => {
-                        setDuration(e.currentTarget.duration)
-                    }}
-                    onTimeUpdate={(e) => {
-                        setCurrentTime(e.currentTarget.currentTime)
-                    }}
-                />
-                <div className="flex justify-between text-sm text-muted-foreground">
-                    <span>{formatTime(currentTime)}</span>
-                    <span>{formatTime(duration)}</span>
-                </div>
-                <div className="w-full h-1 bg-gray-300 rounded overflow-hidden" onClick={seek}>
-                    <div
-                        className="h-full bg-yellow-400 transition-[width] duration-100"
-                        style={{ width: `${progress}%` }}
-                    />
-                p</div>
-            </div>
-
             <div className="flex flex-row">
                 <div>
-                    <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded" onClick={() => { markUserInteraction(); prevTrack() }}>Back</button>
-                </div>
-                <div className="w-8"></div>
-                <div>
-                    <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded" onClick={() => { markUserInteraction(); pauseTrack() }}>Pause</button>
-                </div>
-                <div className="w-8"></div>
-                <div>
-                    <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded" onClick={() => { markUserInteraction(); nextTrack() }}>Next</button>
-                </div>
-            </div>
+                    <p className="mb-4">Now Playing: {currentTrack?.title} - {currentTrack?.artist}</p>
+                    <div className="mb-4">
+                        <audio
+                            ref={audioRef}
+                            src={currentTrack?.src}
+                            onPlay={() => { userInteractionRef.current = true }}
+                            onEnded={() => { nextTrack() }}
+                            onLoadedMetadata={(e) => {
+                                setDuration(e.currentTarget.duration)
+                            }}
+                            onTimeUpdate={(e) => {
+                                setCurrentTime(e.currentTarget.currentTime)
+                            }}
+                        />
+                        <div className="flex justify-between text-sm text-muted-foreground">
+                            <span>{formatTime(currentTime)}</span>
+                            <span>{formatTime(duration)}</span>
+                        </div>
+                        <div className="w-full h-1 bg-gray-300 rounded overflow-hidden" onClick={seek}>
+                            <div
+                                className="h-full bg-yellow-400 transition-[width] duration-100"
+                                style={{ width: `${progress}%` }}
+                            />
+                            p</div>
+                    </div>
 
-            <div>
-                <p className="mb-2">Tracklist:</p>
-                <ol>
-                    {history.map((track, i) => (
-                        <li key={`${track}-${i}`}>
-                            {track?.title}
-                        </li>
-                    ))}
-                </ol>
+                    <div className="flex flex-row">
+                        <div>
+                            <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded" onClick={() => { markUserInteraction(); prevTrack() }}>Back</button>
+                        </div>
+                        <div className="w-8"></div>
+                        <div>
+                            <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded" onClick={() => { markUserInteraction(); pauseTrack() }}>{ isPlaying? "Play" : "Pause" }</button>
+                        </div>
+                        <div className="w-8"></div>
+                        <div>
+                            <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded" onClick={() => { markUserInteraction(); nextTrack() }}>Next</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p className="mb-2">Tracklist:</p>
+                    <ol className="space-y-1">
+                        {tracks.map((track, i) => {
+                            const isActive = track === currentTrack
+
+                            return (
+                                <li key={track.src}>
+                                    <button
+                                        className={`w-full text-left px-2 py-1 rounded ${isActive ? "bg-yellow-400 text-black font-semibold" : "hover:bg-gray-200"}`}
+                                        onClick={() => {
+                                            markUserInteraction()
+                                            navigatingRef.current = false
+                                            setCurrentTrack(track)
+                                        }}
+                                    >
+                                        {track.title} - {track.artist}
+                                    </button>
+                                </li>
+                            )
+                        })}
+                    </ol>
+                </div>
             </div>
         </section>
     )

@@ -1,7 +1,7 @@
 [
     {
         "src": "3pcjaz.ogg",
-        "title": "3Piece-JazzParty",
+        "title": "3Piece-JazzParty!",
         "artist": "ミハイル",
         "bpm": "160",
         "release": "2012-11-29"
@@ -19,5 +19,26 @@
         "artist": "翡翠",
         "bpm": "180",
         "release": "2018-06-01"
+    },
+    {
+        "src": "insidm.ogg",
+        "title": "1/2 ～inside me",
+        "artist": "篠原瑞希 feat. 愛原圭織",
+        "bpm": "184",
+        "release": "2019-12-17"
+    },
+    {
+        "src": "rot.ogg",
+        "title": "さいたま2000",
+        "artist": "LindaAI-CUE",
+        "bpm": "200",
+        "release": "2003-10-30"
+    },
+    {
+        "src": "morpho.ogg",
+        "title": "モルフォ",
+        "artist": "ミフメイ feat. cono",
+        "bpm": "180",
+        "release": "2024-10-19"
     }
 ]
