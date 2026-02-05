@@ -176,6 +176,21 @@ export default function Player() {
         }
     }, [currentTrack])
 
+    /*
+    player layout:
+    title
+    subtitle
+    AUDIO
+    AUDIO
+    AUDIO
+    more information (dropdown?):
+    composer
+    singer
+    lyricist/other credits
+    bpm
+    released
+    first game
+    */
     return (
         <section>
             <div className="flex flex-row">
