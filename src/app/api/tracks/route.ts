@@ -15,6 +15,7 @@ export async function GET() {
 		artist: track.artist,
 		bpm: track.bpm,
 		releaseDate: new Date(track.release),
+		firstGame: track.firstGame,
 	}))
 
 	return NextResponse.json(result)

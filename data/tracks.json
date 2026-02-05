@@ -4,41 +4,55 @@
         "title": "3Piece-JazzParty!",
         "artist": "ミハイル",
         "bpm": "160",
-        "release": "2012-11-29"
+        "release": "2012-11-29",
+        "firstGame": "PSPDX"
     },
     {
         "src": "tengu.ogg",
         "title": "天狗囃子",
         "artist": "翡翠",
         "bpm": "92-226",
-        "release": "2016-07-14"
+        "release": "2016-07-14",
+        "firstGame": "Red"
     },
     {
         "src": "sora7x.ogg",
         "title": "SORA‐Ⅶ シグナスウォール",
         "artist": "翡翠",
         "bpm": "180",
-        "release": "2018-06-01"
+        "release": "2018-06-01",
+        "firstGame": "Blue"
     },
     {
         "src": "insidm.ogg",
         "title": "1/2 ～inside me",
         "artist": "篠原瑞希 feat. 愛原圭織",
         "bpm": "184",
-        "release": "2019-12-17"
+        "release": "2019-12-17",
+        "firstGame": "PS4"
     },
     {
         "src": "rot.ogg",
         "title": "さいたま2000",
         "artist": "LindaAI-CUE",
         "bpm": "200",
-        "release": "2003-10-30"
+        "release": "2003-10-30",
+        "firstGame": "CS3"
     },
     {
         "src": "morpho.ogg",
         "title": "モルフォ",
         "artist": "ミフメイ feat. cono",
         "bpm": "180",
-        "release": "2024-10-19"
+        "release": "2024-10-19",
+        "firstGame": "Nijiro 2024"
+    },
+    {
+        "src": "sqr.ogg",
+        "title": "スポーツダイジェスドン",
+        "artist": "中鶴潤一",
+        "bpm": "130",
+        "release": "2003-10-30",
+        "firstGame": "CS3"
     }
 ]

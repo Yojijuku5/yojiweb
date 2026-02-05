@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef, useState } from 'react'
 
@@ -9,10 +9,9 @@ type Track = {
     artist: string,
     bpm: string,
     releaseDate: Date,
+    firstGame: string,
 }
 
-//what if i hooked it up to ESE directly, save space/time
-//order based on game inside the json
 export default function Player() {
     const [tracks, setTracks] = useState<Track[]>([])
 
@@ -25,7 +24,10 @@ export default function Player() {
 
     const progress = duration > 0 ? (currentTime / duration) * 100 : 0
 
-    const [isPlaying, setIsPlaying] = useState(true)
+    const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({})
+
+    //true = Pause (playing), false = Play (paused)
+    const [isPlaying, setIsPlaying] = useState(false)
 
     const [history, setHistory] = useState<Track[]>([])
     const [historyIndex, setHistoryIndex] = useState(-1)
@@ -42,6 +44,20 @@ export default function Player() {
         const seconds = Math.floor(time % 60)
 
         return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`
+    }
+
+    const groupTracks = tracks.reduce<Record<string, Track[]>>((acc, track) => {
+        if (!acc[track.firstGame]) acc[track.firstGame] = []
+        acc[track.firstGame].push(track)
+
+        return acc
+    }, {})
+
+    const toggleGroup = (firstGame: string) => {
+        setOpenGroups(prev => ({
+            ...prev,
+            [firstGame]: !prev[firstGame],
+        }))
     }
 
     const playRandomTrack = (exclude?: Track) => {
@@ -163,7 +179,7 @@ export default function Player() {
     return (
         <section>
             <div className="flex flex-row">
-                <div>
+                <div className="bg-gray-800 rounded-xl p-5">
                     <p className="mb-4">Now Playing: {currentTrack?.title} - {currentTrack?.artist}</p>
                     <div className="mb-4">
                         <audio
@@ -196,7 +212,7 @@ export default function Player() {
                         </div>
                         <div className="w-8"></div>
                         <div>
-                            <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded" onClick={() => { markUserInteraction(); pauseTrack() }}>{ isPlaying? "Play" : "Pause" }</button>
+                            <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded" onClick={() => { markUserInteraction(); pauseTrack() }}>{ isPlaying? "Pause" : "Play" }</button>
                         </div>
                         <div className="w-8"></div>
                         <div>
@@ -205,28 +221,46 @@ export default function Player() {
                     </div>
                 </div>
 
-                <div>
-                    <p className="mb-2">Tracklist:</p>
-                    <ol className="space-y-1">
-                        {tracks.map((track, i) => {
-                            const isActive = track === currentTrack
+                <div className="mx-10">
+                </div>
 
-                            return (
-                                <li key={track.src}>
-                                    <button
-                                        className={`w-full text-left px-2 py-1 rounded ${isActive ? "bg-yellow-400 text-black font-semibold" : "hover:bg-gray-200"}`}
-                                        onClick={() => {
-                                            markUserInteraction()
-                                            navigatingRef.current = false
-                                            setCurrentTrack(track)
-                                        }}
-                                    >
-                                        {track.title} - {track.artist}
-                                    </button>
-                                </li>
-                            )
-                        })}
-                    </ol>
+                <div className="bg-gray-800 rounded-xl p-5">
+                    <p className="mb-2">Tracklist: </p>
+
+                    {Object.entries(groupTracks).map(([firstGame, groupTracks]) => (
+                        <div key={firstGame} className="mb-4">
+                            <button
+                                className="w-full text-left font-semibold px-2 py-1 rounded bg-gray-700 hover:bg-gray-600"
+                                onClick={() => toggleGroup(firstGame)}
+                            >
+                                {firstGame} {openGroups[firstGame] ? "▾" : "▸"}
+                            </button>
+
+                            {openGroups[firstGame] && (
+                                <ol className="mt-1 space-y-1">
+                                    {groupTracks.map(track => {
+                                        const isActive = track === currentTrack
+
+                                        return (
+                                            <li key={track.src}>
+                                                <button
+                                                    className={`w-full text-left px-2 py-1 rounded ${isActive ? "bg-yellow-400 text-black font-semibold" : "hover:bg-gray-200"}`}
+                                                    onClick={() => {
+                                                        markUserInteraction()
+                                                        navigatingRef.current = false
+                                                        setCurrentTrack(track)
+                                                        setIsPlaying(true)
+                                                    }}
+                                                >
+                                                    {track.title} - {track.artist}
+                                                </button>
+                                            </li>
+                                        )
+                                    }) }
+                                </ol>
+                            )}
+                        </div>
+                    )) }
                 </div>
             </div>
         </section>
