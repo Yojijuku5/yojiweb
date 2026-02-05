@@ -12,6 +12,7 @@ export async function GET() {
 	const result = tracks.map((track: any) => ({
 		src: `https://yojiweb.com/audio/${track.src}`,
 		title: track.title,
+		subtitle: track.subtitle,
 		artist: track.artist,
 		bpm: track.bpm,
 		releaseDate: new Date(track.release),
