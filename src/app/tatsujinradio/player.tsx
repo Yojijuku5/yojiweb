@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 type Track = {
     src: string,
     title: string,
+    subtitle: string,
     artist: string,
     bpm: string,
     releaseDate: Date,
