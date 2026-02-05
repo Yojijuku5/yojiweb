@@ -10,17 +10,13 @@ export async function GET() {
 	const tracks = JSON.parse(raw)
 
 	const result = tracks.map((track: any) => ({
-		src: `https://yojiweb.com/audio/${track.src}`,
+		src: `/audio/${track.src}`,
 		title: track.title,
 		artist: track.artist,
 		bpm: track.bpm,
 		releaseDate: new Date(track.release),
+		firstGame: track.firstGame,
 	}))
 
-	return NextResponse.json(result, {
-		headers: {
-			"Access-Control-Allow-Origin": "https://tatsujinradio.yojiweb.com",
-			"Access-Control-Allow-Methods": "GET",
-		}
-	})
+	return NextResponse.json(result)
 }
