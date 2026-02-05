@@ -10,7 +10,7 @@ export async function GET() {
 	const tracks = JSON.parse(raw)
 
 	const result = tracks.map((track: any) => ({
-		src: `/audio/${track.src}`,
+		src: `https://yojiweb.com/audio/${track.src}`,
 		title: track.title,
 		artist: track.artist,
 		bpm: track.bpm,

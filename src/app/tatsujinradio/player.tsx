@@ -132,7 +132,7 @@ export default function Player() {
 
     //fetching audio tracks
     useEffect(() => {
-        fetch("/api/tracks")
+        fetch("https://yojiweb.com/api/tracks")
             .then((res) => res.json())
             .then((data: Track[]) => {
                 setCurrentTrack(data[Math.floor(Math.random() * data.length)])
