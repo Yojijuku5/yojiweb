@@ -214,8 +214,8 @@ export default function Player() {
                                 src={currentTrack?.src}
                                 onPlay={() => { userInteractionRef.current = true }}
                                 onEnded={() => { nextTrack() }}
-                                onLoadedMetadata={() => {
-                                    setDuration(currentTrack?.duration)
+                                onLoadedMetadata={(e) => {
+                                    setDuration(e.currentTarget.duration)
                                 }}
                                 onTimeUpdate={(e) => {
                                     setCurrentTime(e.currentTarget.currentTime)
