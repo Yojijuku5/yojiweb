@@ -1,137 +1,152 @@
 [
     {
         "src": "hello.ogg",
+        "duration":  "119",
         "title": "ハロー！どんちゃん",
         "subtitle": "",
         "artist": "みすみゆり",
         "bpm": "140",
         "release": "2001-02-21",
-        "firstGame": "AC1"
+        "firstGame": "太鼓の達人 (AC1)"
     },
     {
         "src": "ypp.ogg",
         "title": "太陽もヤッパッパー",
+        "duration": "118",
         "subtitle": "",
         "artist": "みすみゆり",
         "bpm": "146",
         "release": "2001-02-21",
-        "firstGame": "AC1"
+        "firstGame": "太鼓の達人 (AC1)"
     },
     {
         "src": "mappy.ogg",
         "title": "マッピー音頭",
+        "duration": "95",
         "subtitle": "",
         "artist": "みすみゆり",
         "bpm": "126",
         "release": "2001-02-21",
-        "firstGame": "AC1"
+        "firstGame": "太鼓の達人 (AC1)"
     },
     {
         "src": "bko.ogg",
         "title": "ラブユー☆どんちゃん",
+        "duration": "117",
         "subtitle": "",
         "artist": "岡部啓一",
         "bpm": "130",
         "release": "2001-02-21",
-        "firstGame": "AC1"
+        "firstGame": "太鼓の達人 (AC1)"
     },
     {
         "src": "bugi.ogg",
         "title": "オフ♨ロック",
+        "duration": "118",
         "subtitle": "",
         "artist": "みすみゆり",
         "bpm": "200",
         "release": "2001-02-21",
-        "firstGame": "AC1"
+        "firstGame": "太鼓の達人 (AC1)"
     },
     {
         "src": "heavy.ogg",
         "title": "地獄の太鼓事典",
+        "duration": "103",
         "subtitle": "",
         "artist": "みすみゆり",
         "bpm": "200",
         "release": "2001-02-21",
-        "firstGame": "AC1"
+        "firstGame": "太鼓の達人 (AC1)"
     },
     {
         "src": "ccb.ogg",
         "title": "君に、ロマンティック。",
+        "duration": "94",
         "subtitle": "",
         "artist": "矢野義人",
         "bpm": "130",
         "release": "2001-02-21",
-        "firstGame": "AC1"
+        "firstGame": "太鼓の達人 (AC1)"
     },
     {
         "src": "ska.ogg",
         "title": "ゴー・ゴー・キッチン",
+        "duration": "124",
         "subtitle": "",
         "artist": "みすみゆり",
         "bpm": "206",
         "release": "2001-02-21",
-        "firstGame": "AC1"
+        "firstGame": "太鼓の達人 (AC1)"
     },
     {
         "src": "3pcjaz.ogg",
         "title": "3Piece-JazzParty!",
+        "duration": "95",
         "subtitle": "",
         "artist": "ミハイル",
         "bpm": "160",
         "release": "2012-11-29",
-        "firstGame": "PSPDX"
+        "firstGame": "太鼓の達人 ぽ～たぶるDX (PSP)"
     },
     {
         "src": "tengu.ogg",
         "title": "天狗囃子",
+        "duration": "158",
         "subtitle": "",
         "artist": "翡翠",
         "bpm": "92-226",
         "release": "2016-07-14",
-        "firstGame": "Red"
+        "firstGame": "太鼓の達人 レッド (AC15)"
     },
     {
         "src": "sora7x.ogg",
         "title": "SORA‐Ⅶ シグナスウォール",
+        "duration": "151",
         "subtitle": "",
         "artist": "翡翠",
         "bpm": "180",
         "release": "2018-06-01",
-        "firstGame": "Blue"
+        "firstGame": "太鼓の達人 ブルー (AC15)"
     },
     {
         "src": "insidm.ogg",
         "title": "1/2 ～inside me",
+        "duration": "125",
         "subtitle": "",
         "artist": "篠原瑞希 feat. 愛原圭織",
         "bpm": "184",
         "release": "2019-12-17",
-        "firstGame": "PS4"
+        "firstGame": "太鼓の達人 セッションでドドンがドン！ (PS4)"
     },
     {
         "src": "rot.ogg",
         "title": "さいたま2000",
+        "duration": "113",
         "subtitle": "",
         "artist": "LindaAI-CUE",
         "bpm": "200",
         "release": "2003-10-30",
-        "firstGame": "CS3"
+        "firstGame": "太鼓の達人 あっぱれ三代目 (CS3)"
     },
     {
         "src": "morpho.ogg",
         "title": "モルフォ",
+        "duration": "116",
         "subtitle": "",
         "artist": "ミフメイ feat. cono",
         "bpm": "180",
         "release": "2024-10-19",
-        "firstGame": "Nijiro 2024"
+        "firstGame": "太鼓の達人 ニジイロ2024 (AC16)"
     },
     {
         "src": "sqr.ogg",
         "title": "スポーツダイジェスドン",
+        "duration": "157",
         "subtitle": "～fill in the sky～",
         "artist": "中鶴潤一",
         "bpm": "130",
         "release": "2003-10-30",
-        "firstGame": "CS3"
+        "firstGame": "太鼓の達人 あっぱれ三代目 (CS3)"
     }
 ]

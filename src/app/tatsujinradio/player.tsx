@@ -5,14 +5,16 @@ import { useEffect, useRef, useState } from 'react'
 //if used elsewhere, move to separate file
 type Track = {
     src: string,
+    duration: number,
     title: string,
     subtitle: string,
     artist: string,
     bpm: string,
-    releaseDate: Date,
+    releaseDate: string,
     firstGame: string,
 }
 
+//fix song durations - harcoded into json for now, want to use file metadata ideally
 export default function Player() {
     const [tracks, setTracks] = useState<Track[]>([])
 
@@ -26,6 +28,7 @@ export default function Player() {
     const progress = duration > 0 ? (currentTime / duration) * 100 : 0
 
     const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({})
+    const [showInfo, setShowInfo] = useState(false)
 
     //true = Pause (playing), false = Play (paused)
     const [isPlaying, setIsPlaying] = useState(false)
@@ -78,12 +81,15 @@ export default function Player() {
             navigatingRef.current = true
             setHistoryIndex((i) => i + 1)
             setCurrentTrack(history[historyIndex + 1])
+            setIsPlaying(true)
             return
         }
 
+        setIsPlaying(true)
         setCurrentTrack(playRandomTrack(currentTrack))
     }
 
+    //fix bugs
     const prevTrack = () => {
         userInteractionRef.current = true
 
@@ -98,6 +104,7 @@ export default function Player() {
         if (historyIndex > 0) {
             navigatingRef.current = true
             setHistoryIndex((i) => i - 1)
+            setIsPlaying(true)
             setCurrentTrack(history[historyIndex - 1])
         }
         else {
@@ -195,45 +202,66 @@ export default function Player() {
     return (
         <section>
             <div className="flex flex-row">
-                <div className="bg-gray-800 rounded-xl p-5">
-                    <p className="mb-4">Now Playing: {currentTrack?.title} - {currentTrack?.artist}</p>
-                    <div className="mb-4">
-                        <audio
-                            ref={audioRef}
-                            src={currentTrack?.src}
-                            onPlay={() => { userInteractionRef.current = true }}
-                            onEnded={() => { nextTrack() }}
-                            onLoadedMetadata={(e) => {
-                                setDuration(e.currentTarget.duration)
-                            }}
-                            onTimeUpdate={(e) => {
-                                setCurrentTime(e.currentTarget.currentTime)
-                            }}
-                        />
-                        <div className="flex justify-between text-sm text-muted-foreground">
-                            <span>{formatTime(currentTime)}</span>
-                            <span>{formatTime(duration)}</span>
-                        </div>
-                        <div className="w-full h-1 bg-gray-300 rounded overflow-hidden" onClick={seek}>
-                            <div
-                                className="h-full bg-yellow-400 transition-[width] duration-100"
-                                style={{ width: `${progress}%` }}
+                <div>
+                    <div className="bg-gray-800 rounded-xl p-5">
+                        <p className="text-center">{currentTrack?.title}</p>
+                        <p className="text-center mb-4">{currentTrack?.subtitle}</p>
+                        <div className="mb-4">
+                            <audio
+                                ref={audioRef}
+                                src={currentTrack?.src}
+                                onPlay={() => { userInteractionRef.current = true }}
+                                onEnded={() => { nextTrack() }}
+                                onLoadedMetadata={() => {
+                                    setDuration(currentTrack?.duration)
+                                }}
+                                onTimeUpdate={(e) => {
+                                    setCurrentTime(e.currentTarget.currentTime)
+                                }}
                             />
-                            p</div>
-                    </div>
+                            <div className="flex justify-between text-sm text-muted-foreground">
+                                <span>{formatTime(currentTime)}</span>
+                                <span>{formatTime(duration)}</span>
+                            </div>
+                            <div className="w-full h-1 bg-gray-300 rounded overflow-hidden" onClick={seek}>
+                                <div
+                                    className="h-full bg-yellow-400 transition-[width] duration-100"
+                                    style={{ width: `${progress}%` }}
+                                />
+                            </div>
+                        </div>
 
-                    <div className="flex flex-row">
-                        <div>
-                            <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded" onClick={() => { markUserInteraction(); prevTrack() }}>Back</button>
+                        <div className="flex flex-row">
+                            <div>
+                                <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded text-2xl" onClick={() => { markUserInteraction(); prevTrack() }}>⏮</button>
+                            </div>
+                            <div className="w-8"></div>
+                            <div>
+                                <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded text-2xl" onClick={() => { markUserInteraction(); pauseTrack() }}>{isPlaying ? "⏸" : "▶"}</button>
+                            </div>
+                            <div className="w-8"></div>
+                            <div>
+                                <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded text-2xl" onClick={() => { markUserInteraction(); nextTrack() }}>⏭</button>
+                            </div>
                         </div>
-                        <div className="w-8"></div>
+
                         <div>
-                            <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded" onClick={() => { markUserInteraction(); pauseTrack() }}>{ isPlaying? "Pause" : "Play" }</button>
+                            <button
+                                className="w-full text-left font-semibold px-2 py-1 rounded bg-gray-700 hover:bg-gray-600"
+                                onClick={() => setShowInfo(prev => !prev) }
+                            >
+                                More Information {showInfo ? "▾" : "▸"}
+                            </button>
+                            {showInfo && currentTrack && (
+                                <ol className="mt-1 space-y-1 px-2 text-sm">
+                                    <li>Artist: {currentTrack.artist}</li>
+                                    <li>BPM: {currentTrack.bpm}</li>
+                                    <li>Release Date: {currentTrack.releaseDate}</li>
+                                    <li>First Game: {currentTrack.firstGame}</li>
+                                </ol>
+                            ) }
                         </div>
-                        <div className="w-8"></div>
-                        <div>
-                            <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded" onClick={() => { markUserInteraction(); nextTrack() }}>Next</button>
-                        </div>
+
                     </div>
                 </div>
 
