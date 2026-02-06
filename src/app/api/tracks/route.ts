@@ -18,5 +18,10 @@ export async function GET() {
 		firstGame: track.firstGame,
 	}))
 
-	return NextResponse.json(result)
+	return NextResponse.json(result, {
+		headers: {
+			"Access-Control-Allow-Origin": "https://tatsujinradio.yojiweb.com",
+			"Access-Control-Allow-Methods": "GET",
+		}
+	})
 }
