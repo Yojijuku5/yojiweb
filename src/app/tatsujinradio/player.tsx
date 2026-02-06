@@ -140,7 +140,9 @@ export default function Player() {
 
     //fetching audio tracks
     useEffect(() => {
-        fetch("/api/tracks")
+        const API_BASE = process.env.NODE_ENV === "development" ? "" : "https://yojiweb.com"
+
+        fetch(`${API_BASE}/api/tracks`)
             .then((res) => res.json())
             .then((data: Track[]) => {
                 setCurrentTrack(data[Math.floor(Math.random() * data.length)])
@@ -212,8 +214,8 @@ export default function Player() {
                                 src={currentTrack?.src}
                                 onPlay={() => { userInteractionRef.current = true }}
                                 onEnded={() => { nextTrack() }}
-                                onLoadedMetadata={() => {
-                                    setDuration(currentTrack?.duration)
+                                onLoadedMetadata={(e) => {
+                                    setDuration(e.currentTarget.duration)
                                 }}
                                 onTimeUpdate={(e) => {
                                     setCurrentTime(e.currentTarget.currentTime)
