@@ -225,6 +225,7 @@ export default function Player() {
                         <p className="text-center mb-4">{currentTrack?.subtitle}</p>
                         <div className="mb-4">
                             <audio
+                                preload="auto"
                                 ref={audioRef}
                                 src={currentTrack?.src}
                                 onPlay={() => { userInteractionRef.current = true }}
