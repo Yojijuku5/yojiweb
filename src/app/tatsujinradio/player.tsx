@@ -27,6 +27,8 @@ export default function Player() {
 
     const progress = duration > 0 ? (currentTime / duration) * 100 : 0
 
+    const [volume, setVolume] = useState(1)
+
     const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({})
     const [showInfo, setShowInfo] = useState(false)
 
@@ -89,7 +91,6 @@ export default function Player() {
         setCurrentTrack(playRandomTrack(currentTrack))
     }
 
-    //fix bugs
     const prevTrack = () => {
         userInteractionRef.current = true
 
@@ -186,6 +187,20 @@ export default function Player() {
         }
     }, [currentTrack])
 
+    //set volume
+    useEffect(() => {
+        if (audioRef.current) {
+            audioRef.current.volume = volume
+        }
+    }, [volume])
+
+    //set doc(webpage) title
+    useEffect(() => {
+        if (!currentTrack) return
+
+        document.title = `${currentTrack.title} - Tatsujin Radio`
+    }, [currentTrack])    
+
     /*
     player layout:
     title
@@ -203,10 +218,10 @@ export default function Player() {
     */
     return (
         <section>
-            <div className="flex flex-row">
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
                 <div>
                     <div className="bg-gray-800 rounded-xl p-5">
-                        <p className="text-center">{currentTrack?.title}</p>
+                        <p className="text-center text-xl">{currentTrack?.title}</p>
                         <p className="text-center mb-4">{currentTrack?.subtitle}</p>
                         <div className="mb-4">
                             <audio
@@ -233,41 +248,54 @@ export default function Player() {
                             </div>
                         </div>
 
-                        <div className="flex flex-row">
-                            <div>
-                                <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded text-2xl" onClick={() => { markUserInteraction(); prevTrack() }}>⏮</button>
+                        <div className="mb-4">
+                            <div className="flex items-center gap-3">
+                                <span className="text-sm">Volume</span>
+                                <input
+                                    type="range"
+                                    min={0}
+                                    max={1}
+                                    step={0.01}
+                                    value={volume}
+                                    onChange={(e) => setVolume(Number(e.target.value))}
+                                    className="w-full h-2 cursor-pointer accent-yellow-400"
+                                />
                             </div>
-                            <div className="w-8"></div>
+                        </div>
+
+                        <div className="flex flex-row gap-4 lg:gap-8 justify-center">
                             <div>
-                                <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded text-2xl" onClick={() => { markUserInteraction(); pauseTrack() }}>{isPlaying ? "⏸" : "▶"}</button>
+                                <button className="w-16 lg:w-32 h-12 lg:h-16 basis-xs mb-4 bg-gray-500 rounded text-2xl" onClick={() => { markUserInteraction(); prevTrack() }}>⏮</button>
                             </div>
-                            <div className="w-8"></div>
                             <div>
-                                <button className="w-32 h-16 basis-xs mb-4 bg-blue-500 rounded text-2xl" onClick={() => { markUserInteraction(); nextTrack() }}>⏭</button>
+                                <button
+                                    className="w-16 lg:w-32 h-12 lg:h-16 basis-xs mb-4 bg-gray-500 rounded text-2xl"
+                                    onClick={() => { markUserInteraction(); pauseTrack() }}>{isPlaying ? "⏸" : "▶"}
+                                </button>
+                            </div>
+                            <div>
+                                <button className="w-16 lg:w-32 h-12 lg:h-16 basis-xs mb-4 bg-gray-500 rounded text-2xl" onClick={() => { markUserInteraction(); nextTrack() }}>⏭</button>
                             </div>
                         </div>
 
                         <div>
                             <button
-                                className="w-full text-left font-semibold px-2 py-1 rounded bg-gray-700 hover:bg-gray-600"
+                                className="w-full text-left px-2 py-1 rounded bg-gray-700 hover:bg-gray-600"
                                 onClick={() => setShowInfo(prev => !prev) }
                             >
                                 More Information {showInfo ? "▾" : "▸"}
                             </button>
                             {showInfo && currentTrack && (
-                                <ol className="mt-1 space-y-1 px-2 text-sm">
-                                    <li>Artist: {currentTrack.artist}</li>
-                                    <li>BPM: {currentTrack.bpm}</li>
-                                    <li>Release Date: {currentTrack.releaseDate}</li>
+                                <ol className="mt-2 px-2 text-sm">
+                                    <li className="mb-2">Artist: {currentTrack.artist}</li>
+                                    <li className="mb-2">BPM: {currentTrack.bpm}</li>
+                                    <li className="mb-2">Release Date: {currentTrack.releaseDate}</li>
                                     <li>First Game: {currentTrack.firstGame}</li>
                                 </ol>
                             ) }
                         </div>
 
                     </div>
-                </div>
-
-                <div className="mx-10">
                 </div>
 
                 <div className="bg-gray-800 rounded-xl p-5">
@@ -290,7 +318,7 @@ export default function Player() {
                                         return (
                                             <li key={track.src}>
                                                 <button
-                                                    className={`w-full text-left px-2 py-1 rounded ${isActive ? "bg-yellow-400 text-black font-semibold" : "hover:bg-gray-200"}`}
+                                                    className={`w-full text-left px-2 py-1 rounded ${isActive ? "bg-blue-400 text-black font-semibold" : "hover:bg-gray-700"}`}
                                                     onClick={() => {
                                                         markUserInteraction()
                                                         navigatingRef.current = false

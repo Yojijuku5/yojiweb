@@ -19,6 +19,34 @@
   --sh-entity: #e25a1c;
 }
 
+@font-face {
+    font-family: "Taiko";
+    font-style: normal;
+    font-weight: 900;
+    src: url("/fonts/font.otf");
+}
+
+.taikoFont {
+    font-family: "Taiko", normal;
+    font-size: large;
+}
+
+@font-face {
+    font-family: "Meiryo";
+    font-style: normal;
+    src: url("/fonts/meiryo.ttc")
+}
+
+.meiryoFont {
+    font-family: "Meiryo";
+    font-size: large;
+}
+
+.bg-radio {
+    background: url("/bg.png");
+    background-size: auto;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --sh-class: #4c97f8;
