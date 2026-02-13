@@ -91,7 +91,6 @@ export default function Player() {
         setCurrentTrack(playRandomTrack(currentTrack))
     }
 
-    //fix bugs
     const prevTrack = () => {
         userInteractionRef.current = true
 
@@ -194,6 +193,13 @@ export default function Player() {
             audioRef.current.volume = volume
         }
     }, [volume])
+
+    //set doc(webpage) title
+    useEffect(() => {
+        if (!currentTrack) return
+
+        document.title = `${currentTrack.title} - Tatsujin Radio`
+    }, [currentTrack])    
 
     /*
     player layout:
@@ -312,7 +318,7 @@ export default function Player() {
                                         return (
                                             <li key={track.src}>
                                                 <button
-                                                    className={`w-full text-left px-2 py-1 rounded ${isActive ? "bg-blue-400 text-black font-semibold" : "hover:bg-gray-200"}`}
+                                                    className={`w-full text-left px-2 py-1 rounded ${isActive ? "bg-blue-400 text-black font-semibold" : "hover:bg-gray-700"}`}
                                                     onClick={() => {
                                                         markUserInteraction()
                                                         navigatingRef.current = false
