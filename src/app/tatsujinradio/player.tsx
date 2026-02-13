@@ -141,9 +141,10 @@ export default function Player() {
 
     //fetching audio tracks
     useEffect(() => {
-        const API_BASE = process.env.NODE_ENV === "development" ? "" : "https://yojiweb.com"
+        //const API_BASE = process.env.NODE_ENV === "development" ? "" : "https://yojiweb.com"
 
-        fetch(`${API_BASE}/api/tracks`)
+        //fetch(`${API_BASE}/api/tracks`)
+        fetch("/tracks.json")
             .then((res) => res.json())
             .then((data: Track[]) => {
                 setCurrentTrack(data[Math.floor(Math.random() * data.length)])
