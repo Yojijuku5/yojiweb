@@ -14,7 +14,6 @@ type Track = {
     firstGame: string,
 }
 
-//fix song durations - harcoded into json for now, want to use file metadata ideally
 export default function Player() {
     const [tracks, setTracks] = useState<Track[]>([])
 
@@ -225,6 +224,7 @@ export default function Player() {
                         <p className="text-center mb-4">{currentTrack?.subtitle}</p>
                         <div className="mb-4">
                             <audio
+                                preload="metadata"
                                 ref={audioRef}
                                 src={currentTrack?.src}
                                 onPlay={() => { userInteractionRef.current = true }}
