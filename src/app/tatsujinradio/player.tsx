@@ -14,7 +14,6 @@ type Track = {
     firstGame: string,
 }
 
-//fix song durations - harcoded into json for now, want to use file metadata ideally
 export default function Player() {
     const [tracks, setTracks] = useState<Track[]>([])
 
