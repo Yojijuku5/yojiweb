@@ -41,7 +41,7 @@ export default function radioLayout({
 }) {
     return (
         <html lang="en" className={cx("text-white bg-gray-700", "taikoFont")}>
-            <body className="antialiased max-w-5xl mx-4 mt-8 lg:mx-auto">
+            <body className="antialiased max-w-6xl mx-auto mt-8 lg:px-16">
                 <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
                     {children}
                     <Analytics />

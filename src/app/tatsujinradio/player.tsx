@@ -9,6 +9,8 @@ type Track = {
     title: string,
     subtitle: string,
     artist: string,
+    singer: string,
+    lyrics: string,
     bpm: string,
     releaseDate: string,
     firstGame: string,
@@ -39,6 +41,7 @@ export default function Player() {
 
     const navigatingRef = useRef(false)
     const userInteractionRef = useRef(false)
+    const isSeekingRef = useRef(false)
 
     const markUserInteraction = () => {
         userInteractionRef.current = true
@@ -129,13 +132,27 @@ export default function Player() {
         }
     }
 
-    const seek = (e: React.MouseEvent<HTMLDivElement>) => {
-        const rect = e.currentTarget.getBoundingClientRect()
-        const percent = (e.clientX - rect.left) / rect.width
+    const seekToPos = (clientX: number, e: HTMLDivElement) => {
+        const rect = e.getBoundingClientRect()
+        const percent = Math.min(Math.max((clientX - rect.left) / rect.width, 0), 1)
 
         if (audioRef.current && duration) {
             audioRef.current.currentTime = percent * duration
         }
+    }
+
+    const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+        isSeekingRef.current = true
+        seekToPos(e.clientX, e.currentTarget)
+    }
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isSeekingRef.current) return
+        seekToPos(e.clientX, e.currentTarget)
+    }
+
+    const handleMouseUp = () => {
+        isSeekingRef.current = false
     }
 
     //fetching audio tracks
@@ -200,21 +217,6 @@ export default function Player() {
         document.title = `${currentTrack.title} - Tatsujin Radio`
     }, [currentTrack])    
 
-    /*
-    player layout:
-    title
-    subtitle
-    AUDIO
-    AUDIO
-    AUDIO
-    more information (dropdown?):
-    composer
-    singer
-    lyricist/other credits
-    bpm
-    released
-    first game
-    */
     return (
         <section>
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
@@ -240,7 +242,12 @@ export default function Player() {
                                 <span>{formatTime(currentTime)}</span>
                                 <span>{formatTime(duration)}</span>
                             </div>
-                            <div className="w-full h-1 bg-gray-300 rounded overflow-hidden" onClick={seek}>
+                            <div className="w-full h-4 bg-gray-300 rounded overflow-hidden cursor-pointer select-none"
+                                onMouseDown={handleMouseDown}
+                                onMouseMove={handleMouseMove}
+                                onMouseUp={handleMouseUp}
+                                onMouseLeave={handleMouseUp}
+                            >
                                 <div
                                     className="h-full bg-yellow-400 transition-[width] duration-100"
                                     style={{ width: `${progress}%` }}
@@ -278,7 +285,7 @@ export default function Player() {
                             </div>
                         </div>
 
-                        <div>
+                        <div className="max-w-[500px]">
                             <button
                                 className="w-full text-left px-2 py-1 rounded bg-gray-700 hover:bg-gray-600"
                                 onClick={() => setShowInfo(prev => !prev) }
@@ -288,6 +295,12 @@ export default function Player() {
                             {showInfo && currentTrack && (
                                 <ol className="mt-2 px-2 text-sm">
                                     <li className="mb-2">Artist: {currentTrack.artist}</li>
+                                    {currentTrack.singer && (
+                                        <li className="mb-2">Singer: {currentTrack.singer}</li>
+                                    )}
+                                    {currentTrack.lyrics && (
+                                        <li className="mb-2">Lyricist: {currentTrack.lyrics}</li>
+                                    )}
                                     <li className="mb-2">BPM: {currentTrack.bpm}</li>
                                     <li className="mb-2">Release Date: {currentTrack.releaseDate}</li>
                                     <li>First Game: {currentTrack.firstGame}</li>
@@ -298,13 +311,11 @@ export default function Player() {
                     </div>
                 </div>
 
-                <div className="bg-gray-800 rounded-xl p-5">
-                    <p className="mb-2">Tracklist: </p>
-
+                <div className="bg-gray-800 rounded-xl p-5 max-h-[768px] overflow-y-auto">
                     {Object.entries(groupTracks).map(([firstGame, groupTracks]) => (
                         <div key={firstGame} className="mb-4">
                             <button
-                                className="w-full text-left font-semibold px-2 py-1 rounded bg-gray-700 hover:bg-gray-600"
+                                className="w-full text-left font-semibold px-2 py-1 pr-24 rounded bg-gray-700 hover:bg-gray-600"
                                 onClick={() => toggleGroup(firstGame)}
                             >
                                 {firstGame} {openGroups[firstGame] ? "▾" : "▸"}
