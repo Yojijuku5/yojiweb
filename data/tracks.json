@@ -572,6 +572,116 @@
         "firstGame": "太鼓の達人 あつまれ！祭りだ！！四代目"
     },
     {
+        "src": "cs5op.ogg",
+        "title": "今日のご飯は太鼓盛り！",
+        "subtitle": "",
+        "artist": "みすみゆり",
+        "singer": "なはらしみき",
+        "lyrics": "みすみゆり・佐竹伸也",
+        "bpm": "152",
+        "release": "2004-12-09",
+        "firstGame": "太鼓の達人 ゴー！ゴー！五代目"
+    },
+    {
+        "src": "oki.ogg",
+        "title": "シシハゲマイ",
+        "subtitle": "",
+        "artist": "大上昌子",
+        "singer": "大上昌子・矢野義人 (ナマハゲ)",
+        "lyrics": "大上昌子",
+        "bpm": "156",
+        "release": "2004-12-09",
+        "firstGame": "太鼓の達人 ゴー！ゴー！五代目"
+    },
+    {
+        "src": "tako.ogg",
+        "title": "タ・コ・タ・イ・コ",
+        "subtitle": "",
+        "artist": "大上昌子",
+        "singer": "なはらしみき",
+        "lyrics": "大上昌子",
+        "bpm": "150",
+        "release": "2004-12-09",
+        "firstGame": "太鼓の達人 ゴー！ゴー！五代目"
+    },
+    {
+        "src": "gogo.ogg",
+        "title": "シャイニング65",
+        "subtitle": "",
+        "artist": "矢野義人",
+        "singer": "矢野義人",
+        "lyrics": "矢野義人・小田一行 (まさき役)",
+        "bpm": "202",
+        "release": "2004-12-09",
+        "firstGame": "太鼓の達人 ゴー！ゴー！五代目"
+    },
+    {
+        "src": "hold.ogg",
+        "title": "今夜はホーミー",
+        "subtitle": "",
+        "artist": "矢野義人",
+        "singer": "落合祐里香・増渕裕二 (ホーミー)",
+        "lyrics": "矢野義人",
+        "bpm": "106",
+        "release": "2004-12-09",
+        "firstGame": "太鼓の達人 ゴー！ゴー！五代目"
+    },
+    {
+        "src": "clsvio.ogg",
+        "title": "ヴァイオリン協奏曲ホ短調",
+        "subtitle": "",
+        "artist": "中鶴潤一",
+        "singer": "",
+        "lyrics": "",
+        "bpm": "105",
+        "release": "2004-12-09",
+        "firstGame": "太鼓の達人 ゴー！ゴー！五代目"
+    },
+    {
+        "src": "druaga.ogg",
+        "title": "ドルアーガの塔メドレー",
+        "subtitle": "",
+        "artist": "内田哲也",
+        "singer": "",
+        "lyrics": "",
+        "bpm": "188",
+        "release": "2004-12-09",
+        "firstGame": "太鼓の達人 ゴー！ゴー！五代目"
+    },
+    {
+        "src": "diet.ogg",
+        "title": "ダイエット・パダライス",
+        "subtitle": "",
+        "artist": "増渕裕二",
+        "singer": "佐藤美香",
+        "lyrics": "小田一行・増渕裕二",
+        "bpm": "195",
+        "release": "2004-12-09",
+        "firstGame": "太鼓の達人 ゴー！ゴー！五代目"
+    },
+    {
+        "src": "slash.ogg",
+        "title": "恋文2000",
+        "subtitle": "",
+        "artist": "LindaAI-CUE",
+        "singer": "落合祐里香",
+        "lyrics": "前田浩一朗",
+        "bpm": "200",
+        "release": "2004-12-09",
+        "firstGame": "太鼓の達人 ゴー！ゴー！五代目"
+    },
+    {
+        "src": "butou.ogg",
+        "title": "画竜点睛",
+        "subtitle": "",
+        "artist": "西込加久見",
+        "singer": "",
+        "lyrics": "",
+        "bpm": "134",
+        "release": "2004-12-09",
+        "firstGame": "太鼓の達人 ゴー！ゴー！五代目"
+    },
+    {
         "src": "3pcjaz.ogg",
         "title": "3Piece-JazzParty!",
         "subtitle": "",
