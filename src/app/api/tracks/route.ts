@@ -13,6 +13,8 @@ export async function GET() {
 		title: track.title,
 		subtitle: track.subtitle,
 		artist: track.artist,
+		singer: track.singer,
+		lyrics: track.lyrics,
 		bpm: track.bpm,
 		releaseDate: track.release,
 		firstGame: track.firstGame,
