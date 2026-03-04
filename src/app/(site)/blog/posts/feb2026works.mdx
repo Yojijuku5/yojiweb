@@ -1,0 +1,77 @@
+---
+title: Project Progress - February 2026
+publishedAt: '2026-03-04'
+summary: Introduction and progress update to my current projects as of February 2026
+---
+
+As I continue my applications towards finding a full time job, I've had the urge to start a few (two) new projects. 
+Not only am I doing this out of pure passion, but I can also keep my skills up and also learn new things on the way.
+
+One of these projects is the development of a subdomain for this website, and the other is a game developed in Unity. Both of which I will talk about in more detail below.
+
+## Tatsujin Radio
+
+So the first project is this, Tatsujin Radio, which was the main thing I worked on during February. What happened was I'd found a website listing all the music tracks from 
+Mario Kart World for the Nintendo Switch 2, and I'd thought "I could totally make this but for Taiko no Tatsujin music instead". Kind of like a Spotify playlist, but for music 
+from a game which doesn't have all it's audio on mainstream streaming services (yet).
+
+And so I got started. First I set up the subdomain, then got to work reorganising my code/folder structure. Specifically, since I had my new webpage set up as a subdomain, 
+I had all the sub-components (header, footer, etc.) on the subdomain page, when that wasn't needed. To fix this I had to put the "Main" website into it's own subfolder (site), 
+and have the subdomain files in it's own separate folder.
+
+<Image src="/structure.jpg" alt="yojiweb folder structure" width={200} height={200}/>
+
+Another thing that took a while to implement/learn was how to stream audio. I knew from the beginning I wanted to host the audio online somewhere, and then have that audio streamed 
+through the music player on my webpage, but had no idea really how. First, I'd needed to find a cloud storage service. I considered Vercel Blob, since I was already hosting this 
+domain through Vercel, but unfortunately they only offer around 2gb of storage for free, which wasn't going to be enough. After some more looking around (which may or may not have 
+been a ChatGPT query) I'd discovered Cloudlfare's R2 Bucket service, which was precisely what I wanted. 10gb free was more than enough and I probably won't be having enough read/write 
+requests per month to need to pay anyway. The code setup itself was also easy enough, just an api route using the AWS-SDK (my first forage into anything AWS related) and a related json 
+file to store the track metadata. I'd mulled what information I wanted to present about each music track to the user (this is an original feature, not present in my inspiration website) 
+and settled on a fairly modest list which I think gets across most information. Now I just need to finish uploading every track... (I'm just over 200 tracks in out of around 600)
+
+Regarding how I wanted my webpage to look, I mostly followed the layout of my inspiration website. I did reverse the positions of the player and the track listings though, have to be 
+original somewhere lol. This bit is still very much in development though, and probably will be at least until I finally upload all 600-something music tracks. At the very least, 
+I have all the "back-end" i.e. divs in the position I want them, I just need to tighten up edge-cases (there's one song with a ridiculously long subtitle that causes the player to
+widen when it shouldn't, for example) and perfect the layout on smaller screens and then I can put in the finishing touches, which I think will be a more thematic background, 
+a better colour scheme and a footer. The footer's actually quite important, because I do need to state that these songs are copyrighted. I think a better background would also 
+tie the whole thing together, because right now I do feel that it's a bit "generic". For colours more red's instead of the yellows/blues would be more similar to the predominant colours 
+in the games.
+
+<Image src="/tatsujinradio.jpg" alt="current subdomain layout" width={800} height={800}/>
+
+And then that would be the "launch" version of this website, although technically the site is already viewable. Once I the above done I'll post it on my main domain and social media 
+to sort of signify that it's reached a "version 1.0 launch" state. Think of it now as a beta, maybe version 0.6 or 0.7?
+
+## A New Game
+
+And so my other project, which is a Unity Game. I only started working on this towards the end of February, so there's not much to show for now, but I can talk about what sort of game 
+I'm looking to make. 
+
+The game is a roguelike (how original), essentially the staple genre I feel for any aspiring indie game dev my age lol. But it makes sense, considering what defines the genre, it's 
+very "low-maintenance" in a good way, due to the heavy reliance on replayability it means a large team isn't needed to make countless levels/assets/etc. And so that's what I'm doing as well. 
+
+What I'm looking to build is a roguelike-take on the classic Minesweeper game, but also mixed with RPG-elements. How? Well imagine instead of mines they were still mines I guess... But 
+instead of blowing up in your face they initiated a battle with an enemy unit! And also instead of mines you had chests, and events, and shops and boss battles etc. etc. Of course there 
+are still regular mines, there needs to be some fodder to fill a (potentially) 16x16 grid, but one of the things from a design-perspective I'd like to explore is the balance between mines 
+and not-mines. How I can get players to recklessly click on tiles looking for something that isn't a mine. Or maybe they <em>want</em> to click on mines in certain situations. But if 
+the player spends all their time worrying about whether a mine is going to kill them and not worrying about what the next enemy, or event, or item is going to be, I feel that isn't 
+going to be very fun, from a viewer or player perspective. 
+
+Playing the original minesweeper, one of the worst things about the game are the situations were x number of tiles each hold an equal chance to hold a mine and you essentially have to guess. 
+So what if instead of that, in a worst case scenario, you do end up getting hit with a mine, but instead of instantly killing you, you just take some damage and can carry on. 
+I think that would make the game more fun, especially if you throw in a turn-based rpg-roguelike aspect as well.
+
+So I got started on a new Unity Project. I chose Unity this time because I think in general it would be a good thing to know how Unity generally works, and how you make games using 
+commercial game engines like this. I also don't intend for this to be a super long project (for now), so having Unity's visual UI make some things easier (in theory) should be only 
+a good thing. That's not to say I wasn't tempted by something like Allegro and a custom game engine. I think if I had all the time in the world and infinite money I would have chosen 
+Allegro. But I don't really have either of those things, so Unity it is. I also wanted to use C++/C# over another language/script, which is the main reason why I didn't choose 
+Godot, although if I could use C++/C# with Godot I absolutely would have.
+
+In terms of what I got done, well in February I got the minesweeper board up, a few of the non-mine tiles, and I think a player object. I'm going to hold off going into detail I think 
+until next month, since I can get into more detail then. I do know that in March I switched from using defined prefabs and Unity Asset objects for the player/items to a data-driven 
+system (much like how The Binding of Isaac handles these things), which is what I wanted all along, so that's one thing I'll definitely talk about. I did push one build on the 25th 
+though, just to see how things looked.
+
+<Image src="/sweeper1.jpg" alt="how the game looked as of the 25th" width={800} height={800}/>
+
+Long way to go!
