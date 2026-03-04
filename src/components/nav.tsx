@@ -12,11 +12,9 @@ const navItems = {
         name: 'radio',
     },
     */
-    /*
     '/blog': {
-        name: 'nikki',
+        name: 'blog',
     },
-    */
 }
 
 export function Navbar() {

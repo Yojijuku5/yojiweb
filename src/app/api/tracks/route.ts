@@ -27,7 +27,7 @@ export async function GET() {
 			})
 
 			const signedUrl = await getSignedUrl(s3, command, {
-				expiresIn: 60 * 60,
+				expiresIn: (60 * 60) * 12,
 			})
 
 			return {
