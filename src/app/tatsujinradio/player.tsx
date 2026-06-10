@@ -39,6 +39,8 @@ export default function Player() {
     const [history, setHistory] = useState<Track[]>([])
     const [historyIndex, setHistoryIndex] = useState(-1)
 
+    const [playMode, setPlayMode] = useState<'random' | 'inOrder'>('random')
+
     const navigatingRef = useRef(false)
     const userInteractionRef = useRef(false)
     const isSeekingRef = useRef(false)
@@ -68,6 +70,12 @@ export default function Player() {
         }))
     }
 
+    const getCurrentIndex = () => {
+        if (!currentTrack) return -1
+
+        return tracks.findIndex(t => t.src === currentTrack.src)
+    }
+
     const playRandomTrack = (exclude?: Track) => {
         let next = exclude
 
@@ -89,8 +97,16 @@ export default function Player() {
             return
         }
 
+        if (playMode === 'random') {
+            setCurrentTrack(playRandomTrack(currentTrack))
+        }
+        else {
+            const currentIndex = getCurrentIndex()
+            const nextIndex = (currentIndex + 1) % tracks.length
+            setCurrentTrack(tracks[nextIndex])
+        }
+
         setIsPlaying(true)
-        setCurrentTrack(playRandomTrack(currentTrack))
     }
 
     const prevTrack = () => {
@@ -268,6 +284,14 @@ export default function Player() {
                                     className="w-full h-2 cursor-pointer accent-yellow-400"
                                 />
                             </div>
+                        </div>
+
+                        <div className="mb-4 text-center">
+                            <button onClick={() => 
+                                setPlayMode(prev => prev === 'random' ? 'inOrder' : 'random')
+                            }>
+                                Shuffle Mode: {playMode === 'random' ? 'Random' : 'In Order' }
+                            </button>
                         </div>
 
                         <div className="flex flex-row gap-4 lg:gap-8 justify-center">
